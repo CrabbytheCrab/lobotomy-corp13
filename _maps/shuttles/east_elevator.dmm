@@ -41,8 +41,8 @@
 /obj/machinery/computer/shuttle/mining{
 	max_integrity = 3000000;
 	name = "elevator console";
-	possible_destinations = "epsilon_command2;epsilon_control2;epsilon_safety2;epsilon_training2;epsilon_info2;epsilon_discipline2;epsilon_welfare2";
-	shuttleId = "epsilon2"
+	possible_destinations = "east_command;east_control;east_safety;east_training;east_info;east_discipline;east_welfare";
+	shuttleId = "east"
 	},
 /turf/open/floor/pod,
 /area/shuttle/mining)

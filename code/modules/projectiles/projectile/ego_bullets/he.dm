@@ -61,17 +61,20 @@
 	name = "harmony"
 	icon_state = "harmony"
 	nondirectional_sprite = TRUE
-	damage = 16
+	damage = 10
 	damage_type = WHITE_DAMAGE
 	flag = WHITE_DAMAGE
-	speed = 1.3
+	speed = 2.5
 	projectile_piercing = PASSMOB
-	ricochets_max = 3
+	ricochets_max = 300
 	ricochet_chance = 99999999 // JUST FUCKING DO IT
 	ricochet_decay_chance = 1
 	ricochet_decay_damage = 1.5
 	ricochet_auto_aim_range = 3
 	ricochet_incidence_leeway = 360
+	homing = TRUE
+	homing_turn_speed = 30		//Angle per tick.
+	var/homing_range = 9
 
 /obj/projectile/ego_bullet/ego_harmony/check_ricochet_flag(atom/A)
 	if(istype(A, /turf/closed))
@@ -80,6 +83,24 @@
 
 /obj/projectile/ego_bullet/ego_harmony/check_ricochet(atom/A)
 	return TRUE
+
+/obj/projectile/ego_bullet/ego_harmony/Initialize()
+	. = ..()
+	addtimer(CALLBACK(src, .proc/fireback), 3)
+
+/obj/projectile/ego_bullet/ego_harmony/proc/fireback()
+	var/list/targetslist = list()
+	for(var/mob/living/L in range(homing_range, src))
+		if(ishuman(L) || isbot(L))
+			continue
+		if(L.stat == DEAD)
+			continue
+		if(L.status_flags & GODMODE)
+			continue
+		targetslist+=L
+	if(!LAZYLEN(targetslist))
+		return
+	homing_target = pick(targetslist)
 
 /obj/projectile/ego_bullet/ego_song
 	name = "song"

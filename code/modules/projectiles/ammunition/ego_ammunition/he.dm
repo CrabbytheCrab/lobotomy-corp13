@@ -27,6 +27,8 @@
 	name = "harmony saw"
 	desc = "A harmony saw."
 	projectile_type = /obj/projectile/ego_bullet/ego_harmony
+	pellets = 8
+	variance = 360
 
 /obj/item/ammo_casing/caseless/ego_transmission
 	name = "transmission casing"

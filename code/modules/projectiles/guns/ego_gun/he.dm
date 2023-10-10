@@ -142,9 +142,8 @@
 	fire_sound = 'sound/weapons/ego/harmony1.ogg'
 	vary_fire_sound = FALSE
 	weapon_weight = WEAPON_HEAVY
-	fire_sound_volume = 700
-	autofire = 0.05 SECONDS
-	spread = 45
+	fire_sound_volume = 70
+	autofire = 0.35 SECONDS
 	attribute_requirements = list(
 							FORTITUDE_ATTRIBUTE = 40
 							)

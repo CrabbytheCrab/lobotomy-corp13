@@ -1082,3 +1082,48 @@
 	icon = 'icons/obj/manager_bullets.dmi'
 	icon_state = "execution"
 	duration = 10
+
+/obj/effect/temp_visual/red_aura
+	name = "red blizzard"
+	icon_state = "red_aura"
+	duration = 16
+
+/obj/effect/temp_visual/red_aura2
+	name = "red blizzard"
+	icon_state = "red_aura2"
+	duration = 16
+
+/obj/effect/temp_visual/red_aura3
+	name = "red blizzard"
+	icon_state = "red_aura3"
+	duration = 16
+
+/obj/effect/temp_visual/white_aura
+	name = "white blizzard"
+	icon_state = "white_aura"
+	duration = 16
+
+/obj/effect/temp_visual/white_aura2
+	name = "red blizzard"
+	icon_state = "white_aura2"
+	duration = 16
+
+/obj/effect/temp_visual/white_aura3
+	name = "white blizzard"
+	icon_state = "white_aura3"
+	duration = 16
+
+/obj/effect/temp_visual/pale_aura
+	name = "pale blizzard"
+	icon_state = "pale_aura"
+	duration = 16
+
+/obj/effect/temp_visual/pale_aura2
+	name = "pale blizzard"
+	icon_state = "pale_aura2"
+	duration = 16
+
+/obj/effect/temp_visual/pale_aura3
+	name = "pale blizzard"
+	icon_state = "pale_aura3"
+	duration = 16

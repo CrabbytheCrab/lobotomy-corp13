@@ -361,6 +361,7 @@
 				flash_color(M, flash_color = COLOR_RED, flash_time = 25)
 			sound_to_playing_players('sound/abnormalities/whitenight/apostle_bell.ogg', 75)
 			paradise_lifetime = world.time + 5 MINUTES
+	health = maxHealth
 
 /mob/living/simple_animal/hostile/megafauna/black_midnight/Move()
 	if(!can_move)
@@ -1638,10 +1639,31 @@
 			var/obj/effect/temp_visual/cult/sparks/S = new(T)
 			if(faction_check != "apostle")
 				S.color = "#AAFFAA" // Indicating that it's a good thing
+			//This is just an anti-cheese thing since that just hiding would make the final phase a joke.
 			for(var/obj/structure/closet/C in T)
 				for(var/mob/living/L in C)
 					if(ishuman(L))
 						C.Destroy()
+						break
+			for(var/obj/machinery/sleeper/SL in T)
+				for(var/mob/living/L in SL)
+					if(ishuman(L))
+						SL.Destroy()
+						break
+			for(var/obj/structure/bodycontainer/B in T)
+				for(var/mob/living/L in B)
+					if(ishuman(L))
+						B.Destroy()
+						break
+			for(var/obj/machinery/disposal/D in T)
+				for(var/mob/living/L in D)
+					if(ishuman(L))
+						D.Destroy()
+						break
+			for(var/obj/machinery/cryopod/CP in T)
+				for(var/mob/living/L in CP)
+					if(ishuman(L))
+						CP.Destroy()
 						break
 			for(var/mob/living/L in T)
 				new /obj/effect/temp_visual/dir_setting/cult/phase(T, L.dir)
@@ -1680,6 +1702,8 @@
 	if(!can_act)
 		return
 	paradise_ability = paradise_ability_cooldown + world.time
+	playsound(src, 'ModularTegustation/Tegusounds/claw/move.ogg', 100, 1)
+	visible_message(span_danger("[src] summons its apostle's to its location!"))
 	for(var/mob/living/simple_animal/hostile/apostle/G in apostles)
 		var/turf/T = get_step(src, pick(NORTH,SOUTH,WEST,EAST))
 		G.forceMove(T)
@@ -1725,12 +1749,15 @@
 
 /mob/living/simple_animal/hostile/megafauna/black_midnight/proc/GameOver()
 	SSticker.force_ending = 1
+	sound_to_playing_players('sound/abnormalities/whitenight/apostle_bell.ogg')
 	for(var/mob/M in GLOB.player_list)
+		flash_color(M, flash_color = COLOR_RED, flash_time = 100)
 		if(isnewplayer(M))
 			continue
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			H.gib()
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(sound_to_playing_players), 'sound/abnormalities/whitenight/rapture2.ogg', 50), 10 SECONDS)
 
 /mob/living/simple_animal/hostile/megafauna/black_midnight/proc/OneSinSweep()
 	for(var/mob/living/simple_animal/hostile/apostle/A in apostles)

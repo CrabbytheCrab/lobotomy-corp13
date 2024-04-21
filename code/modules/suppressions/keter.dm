@@ -117,7 +117,7 @@
 	desc = "Effects of core suppressions of Central Command, Welfare and Disciplinary departments \
 			will activate for the duration of this test. <br>\
 			To complete the challenge - you must defeat the Midnight of White - The Claw."
-	run_text = "Effects of Control, Information, Safety and Training core suppressions are now in effect. Ordeals of White have been introduced in the subroutines."
+	run_text = "Effects of Central Command and Welfare core suppressions are now in effect. Ordeals of White have been introduced in the subroutines."
 	required_cores = list(
 		CONTROL_CORE_SUPPRESSION,
 		INFORMATION_CORE_SUPPRESSION,
@@ -253,7 +253,7 @@
 /datum/suppression/combination/keter_day50
 	name = DAY50_CORE_SUPPRESSION
 	desc = "The facility will experience unusual effects on it, with unknown subset of ordeals present.<br>\
-			To complete the challenge - you must defeat the Eclipse of White."
+			To complete the challenge - you must defeat the Eclipse of White or the Eclipse of Black ."
 	run_text = "The final day on your job has come."
 	required_cores = list(
 		CONTROL_CORE_SUPPRESSION,

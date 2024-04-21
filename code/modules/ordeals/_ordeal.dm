@@ -98,6 +98,8 @@
 			return "Dusk"
 		if(4, 9)
 			return "Midnight"
+		if(10, 11, 12, 13)
+			return "eclipse"
 	return "Unknown"
 
 //Global special blurb

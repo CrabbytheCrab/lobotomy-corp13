@@ -1,5 +1,6 @@
 #define STATUS_EFFECT_IRRATIONAL_FEAR /datum/status_effect/irrational_fear
 #define STATUS_EFFECT_HEAVY_GUILT /datum/status_effect/stacking/heavy_guilt
+#define STATUS_EFFECT_SCHISMATIC_BLACK /datum/status_effect/schismatic_black
 //lore I guess. It's the personifcation of the greed agents have for better stuff. So if me and Baikal fucked this would be our child.
 /mob/living/simple_animal/hostile/megafauna/black_eclipse
 	name = "Echoes of Flowering Nights"
@@ -47,7 +48,7 @@
 		"distort" = list("Echoes of Distortion", "An eldritch looking humanoid.",RED_DAMAGE,20,40,"John_Distortion", 'ModularTegustation/Teguicons/64x64.dmi',-16,-16,'sound/weapons/punch1.ogg'),
 		"oberon" = list("Echoes of Fairy King", "A being resembling Titania.", BLACK_DAMAGE,75,75, "fairy_king",'ModularTegustation/Teguicons/64x64.dmi',-16,0,'sound/weapons/slash.ogg'),
 		"twilight" = list("Echoes of Twilight", "A beast that seems to be hunting something...", RED_DAMAGE,150,180, "Twilight",'ModularTegustation/Teguicons/160x128.dmi',-64,-16, 'sound/abnormalities/nosferatu/attack.ogg'),
-		"paradise" = list("Echoes of Paradise Lost", "An unholy being. The end is nigh!", PALE_DAMAGE,120,140,"white_night",'ModularTegustation/Teguicons/64x64.dmi',-16,-16,'sound/weapons/ego/paradise.ogg')
+		"paradise" = list("Echoes of Paradise Lost", "An unholy being. The end is nigh!", PALE_DAMAGE,120,140,"paradise",'ModularTegustation/Teguicons/96x64.dmi',-24,-16,'sound/weapons/ego/paradise.ogg')
 	)
 	var/list/modular_damage_coeff = list(
 		"rose" = list(RED_DAMAGE = 0.3, WHITE_DAMAGE = 0.3, BLACK_DAMAGE = 0.5, PALE_DAMAGE = 0),
@@ -115,6 +116,9 @@
 	var/list/twilight_enchanted_list = list()
 	var/twilight_judge_damage = 50
 	var/twilight_beak_damage = 650
+	var/twilight_slam_current = 3
+	var/twilight_slam_cooldown = 3
+	var/twilight_slam_damage = 450
 	//paradise vars
 	var/list/apostles = list()// Currently spawned apostles by this mob
 	var/paradise_aura
@@ -413,6 +417,10 @@
 			if(oberon_chokehold <= world.time && can_act)
 				if(get_dist(src, target) < 4)
 					ChokeHold()
+		if("twilight")
+			if(twilight_slam_current <= 0)
+				twilight_slam_current = twilight_slam_cooldown
+				TwilightSlam()
 		if("paradise")
 			if(paradise_ability <= world.time && can_act)
 				if(get_dist(src, target) > 2)
@@ -498,6 +506,10 @@
 				ChokeHold()
 		if("twilight")
 			if(isliving(target))
+				twilight_slam_current-=1
+				if(twilight_slam_current <= 0)
+					twilight_slam_current = twilight_slam_cooldown
+					TwilightSlam()
 				var/mob/living/L = target
 				var/datum/status_effect/stacking/heavy_guilt/HG = L.has_status_effect(STATUS_EFFECT_HEAVY_GUILT)
 				if(HG && prob(50))
@@ -563,6 +575,7 @@
 	for(var/turf/T in area_of_effect)
 		pick(new /obj/effect/temp_visual/red_aura(T), new /obj/effect/temp_visual/red_aura2(T), new /obj/effect/temp_visual/red_aura3(T))
 		for(var/mob/living/carbon/human/H in HurtInTurf(T, list(), rose_petal_red, RED_DAMAGE, null, null, TRUE, FALSE, TRUE, FALSE, TRUE, TRUE))
+			H.apply_status_effect(STATUS_EFFECT_SCHISMATIC_BLACK)
 			if(H.health <= 0)
 				H.dust()
 	playsound(get_turf(src), 'sound/weapons/fixer/generic/sword3.ogg', 50, 0, 5)
@@ -583,6 +596,7 @@
 	for(var/turf/T in area_of_effect)
 		pick(new /obj/effect/temp_visual/white_aura(T), new /obj/effect/temp_visual/white_aura2(T), new /obj/effect/temp_visual/white_aura3(T))
 		for(var/mob/living/carbon/human/H in HurtInTurf(T, list(), rose_petal_white, WHITE_DAMAGE, null, null, TRUE, FALSE, TRUE, FALSE, TRUE, TRUE))
+			H.apply_status_effect(STATUS_EFFECT_SCHISMATIC_BLACK)
 			if(H.sanity_lost)
 				H.dust()
 	playsound(get_turf(src), 'sound/weapons/fixer/generic/sword3.ogg', 50, 0, 5)
@@ -608,6 +622,7 @@
 			var/list/new_hits = HurtInTurf(T, been_hit, rose_petal_pale, PALE_DAMAGE, check_faction = TRUE, hurt_mechs = TRUE, hurt_structure = TRUE) - been_hit
 			been_hit += new_hits
 			for(var/mob/living/carbon/H in new_hits)
+				H.apply_status_effect(STATUS_EFFECT_SCHISMATIC_BLACK)
 				if(H.health <= 0)
 					H.dust()
 		SLEEP_CHECK_DEATH(2)
@@ -616,6 +631,40 @@
 /datum/weather/petals/short
 	weather_duration_lower = 900		//1.5-2 minutes.
 	weather_duration_upper = 1200
+
+//SCHISMATIC
+//Decrease defenses of heretics.
+/datum/status_effect/schismatic_black
+	id = "schismatic_black"
+	status_type = STATUS_EFFECT_UNIQUE
+	duration = 10 SECONDS
+	alert_type = /atom/movable/screen/alert/status_effect/schismatic_black
+
+/atom/movable/screen/alert/status_effect/schismatic_black
+	name = "Schismatic"
+	desc = "You have been punished for getting hit!"
+	icon = 'ModularTegustation/Teguicons/status_sprites.dmi'
+	icon_state = "schismatic"
+
+/datum/status_effect/schismatic_black/on_apply()
+	. = ..()
+	if(!ishuman(owner))
+		return
+	var/mob/living/carbon/human/status_holder = owner
+	status_holder.physiology.red_mod /= 0.8
+	status_holder.physiology.white_mod /= 0.8
+	status_holder.physiology.black_mod /= 0.8
+	status_holder.physiology.pale_mod /= 0.8
+
+/datum/status_effect/schismatic_black/on_remove()
+	. = ..()
+	if(!ishuman(owner))
+		return
+	var/mob/living/carbon/human/status_holder = owner
+	status_holder.physiology.red_mod *= 0.8
+	status_holder.physiology.white_mod *= 0.8
+	status_holder.physiology.black_mod *= 0.8
+	status_holder.physiology.pale_mod *= 0.8
 
 //distortion related stuff
 /mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/DFApplyFilters()
@@ -737,6 +786,7 @@
 	if(distort_weapon_special > world.time)
 		return
 	distort_weapon_special = world.time + distort_weapon_special_cooldown
+	face_atom(get_step(src,SOUTH))
 	can_act = FALSE
 	can_move = FALSE
 	playsound(get_turf(src), 'sound/abnormalities/nothingthere/goodbye_cast.ogg', 75, 0, 5)
@@ -1488,6 +1538,38 @@
 			to_chat(L, "<span class='boldwarning'>[src] devours you!")
 			if(L.health < 0)
 				L.gib()
+
+/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/TwilightSlam()
+	can_act = FALSE
+	can_move = FALSE
+	playsound(src, 'sound/abnormalities/apocalypse/pre_attack.ogg', 125, FALSE, 4)
+	icon_state = "Twilight_ready"
+	face_atom(get_step(src,SOUTH))
+	SLEEP_CHECK_DEATH(2 SECONDS)
+	if(current_phase != "twilight")
+		return
+	icon_state = "Twilight_slam"
+	playsound(src, 'sound/abnormalities/apocalypse/slam.ogg', 100, FALSE, 12)
+	visible_message(span_danger("[src] slams at the floor with its claws!"))
+	// Shake effect
+	for(var/mob/living/M in livinginrange(8, get_turf(src)))
+		shake_camera(M, 2, 3)
+	// Actual stuff
+	for(var/turf/open/T in view(6, src))
+		new /obj/effect/temp_visual/small_smoke(T)
+	for(var/mob/living/L in livinginview(8, src))
+		if(faction_check_mob(L))
+			continue
+		L.apply_damage(twilight_slam_damage, BLACK_DAMAGE, null, L.run_armor_check(null, BLACK_DAMAGE), spread_damage = TRUE)
+		var/datum/status_effect/stacking/heavy_guilt/HG = L.has_status_effect(STATUS_EFFECT_HEAVY_GUILT)
+		if(HG && prob(50))
+			HG.add_stacks(2)
+	SLEEP_CHECK_DEATH(1 SECONDS)
+	if(current_phase != "twilight")
+		return
+	can_act = TRUE
+	can_move = TRUE
+	icon_state = "Twilight"
 
 /datum/status_effect/stacking/heavy_guilt
 	id = "TWILIGHT"

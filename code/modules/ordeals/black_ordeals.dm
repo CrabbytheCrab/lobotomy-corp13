@@ -5,7 +5,6 @@
 	end_announce_text = "Oh how utter fools we were as we start again anew."
 	can_run = TRUE
 	level = 13
-	eclipse = TRUE
 	reward_percent = 0.25
 	color = "#444444"
 	var/bosstype = /mob/living/simple_animal/hostile/megafauna/black_eclipse

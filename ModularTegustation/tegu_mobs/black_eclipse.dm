@@ -45,7 +45,7 @@
 	// 1=name 2=disc 3=melee damage type 4=lower damage 5= upper damage 6=icon 7=file location 8=x offset 9=y offset
 	var/list/phase_stats = list(
 		"rose" = list("Echoes of Flowering Night","A strange humanoid creature with roses for a head..",PALE_DAMAGE,5,10, "black_eclipse_rose", 'ModularTegustation/Teguicons/32x64.dmi',0,0,'sound/abnormalities/goldenapple/Gold_Attack.ogg'),
-		"distort" = list("Echoes of Distortion", "An eldritch looking humanoid.",RED_DAMAGE,20,40,"John_Distortion", 'ModularTegustation/Teguicons/64x64.dmi',-16,-16,'sound/weapons/punch1.ogg'),
+		"distort" = list("Echoes of Distortion", "An unstable looking humanoid that is constantly shifting between different weapons.",RED_DAMAGE,20,40,"John_Distortion", 'ModularTegustation/Teguicons/64x64.dmi',-16,-16,'sound/weapons/punch1.ogg'),
 		"oberon" = list("Echoes of Fairy King", "A being resembling Titania.", BLACK_DAMAGE,75,75, "fairy_king",'ModularTegustation/Teguicons/64x64.dmi',-16,0,'sound/weapons/slash.ogg'),
 		"twilight" = list("Echoes of Twilight", "A beast that seems to be hunting something...", RED_DAMAGE,150,180, "Twilight",'ModularTegustation/Teguicons/160x128.dmi',-64,-16, 'sound/abnormalities/nosferatu/attack.ogg'),
 		"paradise" = list("Echoes of Paradise Lost", "An unholy being. The end is nigh!", PALE_DAMAGE,120,140,"paradise",'ModularTegustation/Teguicons/96x64.dmi',-24,-16,'sound/weapons/ego/paradise.ogg')

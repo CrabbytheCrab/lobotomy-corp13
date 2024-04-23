@@ -46,7 +46,7 @@
 	var/list/phase_stats = list(
 		"rose" = list("Echoes of Flowering Night","A strange humanoid creature with roses for a head..",PALE_DAMAGE,5,10, "black_eclipse_rose", 'ModularTegustation/Teguicons/32x64.dmi',0,0,'sound/abnormalities/goldenapple/Gold_Attack.ogg'),
 		"distort" = list("Echoes of Distortion", "An unstable looking humanoid that is constantly shifting between different weapons.",RED_DAMAGE,20,40,"John_Distortion", 'ModularTegustation/Teguicons/64x64.dmi',-16,-16,'sound/weapons/punch1.ogg'),
-		"oberon" = list("Echoes of Fairy King", "A being resembling Titania.", BLACK_DAMAGE,75,75, "fairy_king",'ModularTegustation/Teguicons/64x64.dmi',-16,0,'sound/weapons/slash.ogg'),
+		"oberon" = list("Echoes of Fairy King", "A being that sort of resembles Titania but also sort of resembles Nobody Is. Are those 2 connected in someway?", BLACK_DAMAGE,75,75, "fairy_king",'ModularTegustation/Teguicons/64x64.dmi',-16,0,'sound/weapons/slash.ogg'),
 		"twilight" = list("Echoes of Twilight", "A beast that seems to be hunting something...", RED_DAMAGE,150,180, "Twilight",'ModularTegustation/Teguicons/160x128.dmi',-64,-16, 'sound/abnormalities/nosferatu/attack.ogg'),
 		"paradise" = list("Echoes of Paradise Lost", "An unholy being. The end is nigh!", PALE_DAMAGE,120,140,"paradise",'ModularTegustation/Teguicons/96x64.dmi',-24,-16,'sound/weapons/ego/paradise.ogg')
 	)
@@ -134,8 +134,8 @@
 /mob/living/simple_animal/hostile/megafauna/black_eclipse/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NO_FLOATING_ANIM, ROUNDSTART_TRAIT) // Imagine floating.
-	rose_timer = world.time + 4 MINUTES
-	rose_timer_warning = world.time + 3 MINUTES
+	rose_timer = world.time + 5 MINUTES
+	rose_timer_warning = world.time + 4 MINUTES
 
 
 /mob/living/simple_animal/hostile/megafauna/black_eclipse/Life()
@@ -348,8 +348,8 @@
 	switch(current_phase)
 		if("rose")
 			can_move = FALSE
-			rose_timer = world.time + 4 MINUTES
-			rose_timer_warning = world.time + 3 MINUTES
+			rose_timer = world.time + 5 MINUTES
+			rose_timer_warning = world.time + 4 MINUTES
 		if("distort")
 			DFApplyFilters()
 			addtimer(CALLBACK(src, PROC_REF(CauseMelts)), 10)

@@ -1,7 +1,7 @@
 #define STATUS_EFFECT_IRRATIONAL_FEAR /datum/status_effect/irrational_fear
 #define STATUS_EFFECT_HEAVY_GUILT /datum/status_effect/stacking/heavy_guilt
 #define STATUS_EFFECT_SCHISMATIC_BLACK /datum/status_effect/schismatic_black
-//lore I guess. It's the personifcation of the greed agents have for better stuff. So if me and Baikal fucked this would be our child.
+
 /mob/living/simple_animal/hostile/megafauna/black_eclipse
 	name = "Echoes of Flowering Nights"
 	desc = "A strange humanoid creature with roses for a head."
@@ -189,7 +189,7 @@
 			if(cross_ability < world.time)
 				CrossSpawn()
 			if(paradise_lifetime < world.time)
-				DeathAnimation()
+				FightEnding()
 
 /mob/living/simple_animal/hostile/megafauna/black_eclipse/death()
 	if(health > 0)
@@ -208,6 +208,7 @@
 	if(ordeal_reference)
 		ordeal_reference.OnMobDeath(src)
 		ordeal_reference = null
+	QDEL_NULL(particles)
 	animate(src, alpha = 0, time = 20)
 	QDEL_IN(src, 20)
 	return ..()
@@ -302,6 +303,7 @@
 	clear_filters()
 	vis_contents.Cut()
 	current_effect = null
+	particles = null
 	for(var/mob/living/A in oberon_spawned_fairies)
 		A.death()
 	for(var/mob/living/A2 in oberon_spawned_flowers)
@@ -341,6 +343,7 @@
 	base_pixel_y = phase_stats[current_phase][9]
 	attack_sound = phase_stats[current_phase][10]
 	damage_taken = 0
+	paradise_lifetime = world.time + 5 MINUTES
 	update_icon()
 	switch(current_phase)
 		if("rose")
@@ -378,7 +381,7 @@
 			for(var/mob/M in GLOB.player_list)
 				flash_color(M, flash_color = COLOR_RED, flash_time = 25)
 			sound_to_playing_players('sound/abnormalities/whitenight/apostle_bell.ogg', 75)
-			paradise_lifetime = world.time + 5 MINUTES
+			particles = new /particles/white_night()
 
 /mob/living/simple_animal/hostile/megafauna/black_eclipse/Move()
 	if(!can_move)
@@ -1860,7 +1863,7 @@
 				new /obj/effect/crossspawner(get_turf(L2), faction)
 				targets -= L2
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/DeathAnimation()
+/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/FightEnding()
 	var/list/people_alive = list()
 	// Looks at every human.
 	for(var/mob/living/carbon/human/people in GLOB.player_list)
@@ -1908,7 +1911,8 @@
 		sleep(1.5 SECONDS)
 		playsound(get_turf(src), 'sound/machines/clockcult/ark_damage.ogg', 75, TRUE, -1)
 		adjustBruteLoss(curr_health/12)
-		new /obj/effect/temp_visual/onesin_blessing(get_turf(src))
+		var/obj/effect/temp_visual/onesin_blessing/OB = new (get_turf(src))
+		OB.layer = ABOVE_ALL_MOB_LAYER
 	adjustBruteLoss(666666)
 	SIN.death()
 	for(var/mob/M in GLOB.player_list)
@@ -2029,7 +2033,7 @@
 /mob/living/simple_animal/hostile/skullbro/Initialize()
 	. = ..()
 	update_icon()
-	var/mob/living/simple_animal/hostile/abnormality/onesin/OS = locate() in GLOB.abnormality_mob_list
+	var/mob/living/simple_animal/hostile/abnormality/onesin/OS = locate() in GLOB.abnormality_mob_list//we dont want 2 one sins at once since that would be dumb.
 	if(istype(OS))
 		OS.alpha = 0
 

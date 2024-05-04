@@ -595,7 +595,7 @@
 	base_icon_state = "petalblizzard"
 	cooldown_time = 30 SECONDS
 	var/healing_amount = 70 // Amount of healing to plater per "pulse".
-	var/healing_range = 8
+	var/healing_range = 4
 
 /obj/effect/proc_holder/ability/petal_blizzard/Perform(target, mob/user)
 	var/mob/living/carbon/human/H = user
@@ -782,8 +782,9 @@
 	base_icon_state = "yangform"
 	cooldown_time = 60 SECONDS
 
-	var/damage_amount = 300 // Amount of explosion damage
-	var/explosion_range = 15
+	var/damage_amount = 250 // Amount of explosion damage
+	var/healing_amount = -80 // Amount of explosion healing
+	var/explosion_range = 8
 
 /obj/effect/proc_holder/ability/tranquility/Perform(target, mob/living/carbon/human/user)
 	cooldown = world.time + (1.5 SECONDS)
@@ -806,8 +807,8 @@
 					continue
 				if(L.is_working) //no work heal :(
 					continue
-				L.adjustBruteLoss(-120)
-				L.adjustSanityLoss(-120)
+				L.adjustBruteLoss(healing_amount)
+				L.adjustSanityLoss(healing_amount)
 				new /obj/effect/temp_visual/healing(get_turf(L))
 				if(istype(L.get_item_by_slot(ITEM_SLOT_OCLOTHING), /obj/item/clothing/suit/armor/ego_gear/realization/duality_yin))
 					L.apply_status_effect(/datum/status_effect/duality_yang)
@@ -1075,8 +1076,8 @@
 			continue
 		playsound(H, 'sound/abnormalities/onesin/bless.ogg', 100, FALSE, 12)
 		to_chat(H, "<span class='nicegreen'>[user]'s prayer was heard!</span>")
-		H.adjustBruteLoss(-100)
-		H.adjustSanityLoss(-100)
+		H.adjustBruteLoss(-80)
+		H.adjustSanityLoss(-80)
 		H.apply_status_effect(/datum/status_effect/flesh2)
 		new /obj/effect/temp_visual/healing(get_turf(H))
 	return ..()

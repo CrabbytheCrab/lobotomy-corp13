@@ -145,7 +145,7 @@ No Ability	250
 	name = "sakura bloom"
 	desc = "The forest will never return to its original state once it dies. Cherish the rain."
 	icon_state = "sakura_bloom"
-	armor = list(RED_DAMAGE = 30, WHITE_DAMAGE = 80, BLACK_DAMAGE = 40, PALE_DAMAGE = 40)		//Healing
+	armor = list(RED_DAMAGE = 70, WHITE_DAMAGE = 70, BLACK_DAMAGE = 30, PALE_DAMAGE = 60)		//Healing
 	realized_ability = /obj/effect/proc_holder/ability/petal_blizzard
 	hat = /obj/item/clothing/head/ego_hat/sakura_hat
 
@@ -346,21 +346,21 @@ No Ability	250
 	name = "duality of harmony"
 	desc = "When good and evil meet discord and assonance will be quelled."
 	icon_state = "duality_yang"
-	armor = list(RED_DAMAGE = 40, WHITE_DAMAGE = 60, BLACK_DAMAGE = 40, PALE_DAMAGE = 50)		//Healing
+	armor = list(RED_DAMAGE = 40, WHITE_DAMAGE = 80, BLACK_DAMAGE = 40, PALE_DAMAGE = 70)		//Healing
 	realized_ability = /obj/effect/proc_holder/ability/tranquility
 
 /obj/item/clothing/suit/armor/ego_gear/realization/duality_yin
 	name = "harmony of duality"
 	desc = "All that isn't shall become all that is."
 	icon_state = "duality_yin"
-	armor = list(RED_DAMAGE = 50, WHITE_DAMAGE = 40, BLACK_DAMAGE = 80, PALE_DAMAGE = 40)		//Support
+	armor = list(RED_DAMAGE = 70, WHITE_DAMAGE = 40, BLACK_DAMAGE = 80, PALE_DAMAGE = 40)		//Support
 	realized_ability = /obj/effect/proc_holder/ability/aimed/yin_laser
 
 /obj/item/clothing/suit/armor/ego_gear/realization/repentance
 	name = "repentance"
 	desc = "If you pray hard enough, perhaps god will answer it?"
 	icon_state = "repentance"
-	armor = list(RED_DAMAGE = 80, WHITE_DAMAGE = 30, BLACK_DAMAGE = 30, PALE_DAMAGE = 50)		//Healing
+	armor = list(RED_DAMAGE = 80, WHITE_DAMAGE = 40, BLACK_DAMAGE = 40, PALE_DAMAGE = 70)		//Healing
 	realized_ability = /obj/effect/proc_holder/ability/prayer
 
 /obj/item/clothing/suit/armor/ego_gear/realization/nest
@@ -414,7 +414,7 @@ No Ability	250
 	desc = "Armor of humans, for humans, by humans. Is it as 'human' as you?"
 	icon_state = "shell"
 	realized_ability = /obj/effect/proc_holder/ability/goodbye
-	armor = list(RED_DAMAGE = 80, WHITE_DAMAGE = 60, BLACK_DAMAGE = 30, PALE_DAMAGE = 60)			//Melee
+	armor = list(RED_DAMAGE = 80, WHITE_DAMAGE = 50, BLACK_DAMAGE = 40, PALE_DAMAGE = 60)			//Melee
 
 /obj/item/clothing/suit/armor/ego_gear/realization/laughter
 	name = "laughter"
@@ -430,7 +430,7 @@ No Ability	250
 	desc = "Where does one go after falling into a black hole?"
 	icon_state = "fallencolors"
 	realized_ability = /obj/effect/proc_holder/ability/aimed/blackhole
-	armor = list(RED_DAMAGE = 40, WHITE_DAMAGE = 80, BLACK_DAMAGE = 80, PALE_DAMAGE = 30)		//Defensive
+	armor = list(RED_DAMAGE = 30, WHITE_DAMAGE = 80, BLACK_DAMAGE = 80, PALE_DAMAGE = 40)		//Defensive
 	var/canSUCC = TRUE
 
 /obj/item/clothing/suit/armor/ego_gear/realization/fallencolors/equipped(mob/user, slot, initial = FALSE)

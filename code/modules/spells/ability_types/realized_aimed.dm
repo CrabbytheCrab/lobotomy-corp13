@@ -496,7 +496,7 @@
 /obj/effect/temp_visual/revenant/cracks/yinfriend
 	icon_state = "yincracks"
 	duration = 9
-	var/damage = 175  // Amount of black damage dealt to enemies from the laser.
+	var/damage = 150  // Amount of black damage dealt to enemies from the laser.
 	var/list/faction = list("neutral")
 
 /obj/effect/temp_visual/revenant/cracks/yinfriend/Destroy()
@@ -525,19 +525,19 @@
 /atom/movable/screen/alert/status_effect/yinboost
 	name = "Yin Boost"
 	desc = "Anarchy reigns supreme. \
-		Your Justice is increased by 20."
+		Your Justice is increased by 15."
 	icon = 'ModularTegustation/Teguicons/status_sprites.dmi'
 	icon_state = "yinbuff"
 
 /datum/status_effect/yinboost/on_apply()
 	. = ..()
 	var/mob/living/carbon/human/H = owner
-	H.adjust_attribute_buff(JUSTICE_ATTRIBUTE, 20)
+	H.adjust_attribute_buff(JUSTICE_ATTRIBUTE, 15)
 
 /datum/status_effect/yinboost/on_remove()
 	. = ..()
 	var/mob/living/carbon/human/H = owner
-	H.adjust_attribute_buff(JUSTICE_ATTRIBUTE, -20)
+	H.adjust_attribute_buff(JUSTICE_ATTRIBUTE, -15)
 
 /datum/status_effect/duality_yin
 	id = "EGO_YIN2"

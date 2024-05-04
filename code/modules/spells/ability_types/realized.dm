@@ -1064,15 +1064,17 @@
 
 /obj/effect/proc_holder/ability/prayer/Perform(target, mob/living/carbon/human/user)
 	user.apply_status_effect(/datum/status_effect/flesh1)
-	cooldown = world.time + (15 SECONDS)
+	cooldown = world.time + (20 SECONDS)
 	to_chat(user, "<span class='userdanger'>You start praying...</span>")
-	if(!do_after(user, 15 SECONDS))
+	if(!do_after(user, 20 SECONDS) || user.is_working)
 		user.remove_status_effect(/datum/status_effect/flesh1)
 		return
 	for(var/mob/living/carbon/human/H in GLOB.player_list)
 		if(!user.faction_check_mob(H, FALSE))
 			continue
 		if(H.stat == DEAD)
+			continue
+		if(H.z != user.z)
 			continue
 		playsound(H, 'sound/abnormalities/onesin/bless.ogg', 100, FALSE, 12)
 		to_chat(H, "<span class='nicegreen'>[user]'s prayer was heard!</span>")
@@ -1086,7 +1088,7 @@
 	id = "FLESH1"
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = /atom/movable/screen/alert/status_effect/flesh1
-	duration = 15 SECONDS
+	duration = 20 SECONDS
 
 /atom/movable/screen/alert/status_effect/flesh1
 	name = "A prayer to god"
@@ -1119,7 +1121,7 @@
 	id = "FLESH2"
 	status_type = STATUS_EFFECT_UNIQUE
 	alert_type = /atom/movable/screen/alert/status_effect/flesh2
-	duration = 60 SECONDS
+	duration = 45 SECONDS
 
 /atom/movable/screen/alert/status_effect/flesh2
 	name = "An answer from god"

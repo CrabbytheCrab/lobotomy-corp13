@@ -10,7 +10,7 @@ GLOBAL_LIST_EMPTY(lcorp_upgrades)
 	corp = L_CORP_REP
 
 /datum/data/lc13research/reroll/ResearchEffect(obj/structure/representative_console/caller)
-	SSabnormality_queue.next_abno_spawn = world.time + SSabnormality_queue.next_abno_spawn_time + ((min(16, SSabnormality_queue.spawned_abnos) - 6) * 6) SECONDS
+	SSabnormality_queue.next_abno_spawn = world.time + SSabnormality_queue.next_abno_spawn_time + ((min(16, SSabnormality_queue.spawned_abnos) - 6) * 9) SECONDS
 	SSabnormality_queue.PickAbno()
 	minor_announce("Extraction has given you another choice of [GetFacilityUpgradeValue(UPGRADE_ABNO_QUEUE_COUNT)] abnormalities.", "Extraction Alert:", TRUE)
 	..()

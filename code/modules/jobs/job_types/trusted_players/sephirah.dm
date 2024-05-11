@@ -257,7 +257,7 @@ GLOBAL_VAR_INIT(Sephirahmeltmodifier, 0)
 		safe_abnormality_delay = ABNORMALITY_DELAY
 
 	data["current_arrival"] = safe_abnormality_delay
-	data["next_arrival"] = safe_abnormality_delay + SSabnormality_queue.next_abno_spawn_time + ((min(16, (SSabnormality_queue.spawned_abnos + 1)) - 6) * 6) SECONDS
+	data["next_arrival"] = safe_abnormality_delay + SSabnormality_queue.next_abno_spawn_time + ((min(16, (SSabnormality_queue.spawned_abnos + 1)) - 6) * 9) SECONDS
 	data["progress_component"] = (world.time - ABNORMALITY_DELAY) / safe_abnormality_delay
 	// END OF ARRIVAL INFORMATION
 	*/

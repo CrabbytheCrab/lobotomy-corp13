@@ -28,7 +28,7 @@
 	desc = "A white cane that holds electricity."
 	icon_state = "cane_cane"
 	inhand_icon_state = "cane_cane"
-	force = 50
+	force = 75
 	attack_verb_continuous = list("bashes", "crushes")
 	attack_verb_simple = list("bash", "crush")
 
@@ -55,7 +55,7 @@
 	desc = "A white claw seen in use by the cane office."
 	icon_state = "cane_claw"
 	inhand_icon_state = "cane_claw"
-	force = 20
+	force = 25
 	attack_speed = 0.3
 	attack_verb_continuous = list("cuts", "slices")
 	attack_verb_simple = list("cut", "slice")
@@ -84,7 +84,7 @@
 	desc = "A gauntlet seen in use by the cane office."
 	icon_state = "cane_gauntlet"
 	inhand_icon_state = "cane_gauntlet"
-	force = 50
+	force = 80
 	attack_verb_continuous = list("smashes", "bashes")
 	attack_verb_simple = list("smash", "bash")
 
@@ -105,7 +105,7 @@
 	desc = "A briefcase seen in use by the cane office."
 	icon_state = "cane_briefcase"
 	inhand_icon_state = "cane_briefcase"
-	force = 30
+	force = 75
 	attack_verb_continuous = list("smashes", "bashes")
 	attack_verb_simple = list("smash", "bash")
 
@@ -127,5 +127,5 @@
 			var/mob/living/carbon/human/H = L
 			if(!H.sanity_lost)
 				continue
-		L.apply_damage(30, WHITE_DAMAGE, null, L.run_armor_check(null, WHITE_DAMAGE), spread_damage = TRUE)
+		L.apply_damage(75, WHITE_DAMAGE, null, L.run_armor_check(null, WHITE_DAMAGE), spread_damage = TRUE)
 

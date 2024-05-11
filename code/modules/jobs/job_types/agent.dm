@@ -113,12 +113,6 @@
 		if(upgradecheck == "Health Hud")
 			var/datum/atom_hud/medsensor = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
 			medsensor.add_hud_to(outfit_owner)
-
-	//Enable suppression agents.
-	for(var/datum/job/processing in SSjob.occupations)
-		if(istype(processing, /datum/job/suppression/captain))
-			processing.total_positions = 1
-
 	return ..()
 
 
@@ -144,11 +138,11 @@
 /datum/job/agent/captain
 	title = "Agent Captain"
 	selection_color = "#BB9999"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 2
+	spawn_positions = 2
 	outfit = /datum/outfit/job/agent/captain
 	display_order = JOB_DISPLAY_ORDER_CAPTAIN
-
+	normal_attribute_level = 21
 	access = list(ACCESS_COMMAND) // LC13:To-Do
 	exp_requirements = 6000
 	exp_type = EXP_TYPE_CREW

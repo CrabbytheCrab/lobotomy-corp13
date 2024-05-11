@@ -156,9 +156,6 @@ SUBSYSTEM_DEF(lobotomy_corp)
 		cores -= core_type
 	if(!LAZYLEN(available_core_suppressions))
 		return
-	// This solution is hacky and extra dirty I hate it
-	if(extra_core)
-		addtimer(CALLBACK(src, PROC_REF(WarnBeforeReset)), (4 MINUTES))
 	if(announce)
 		var/announce_text = "[extra_core ? "Extra" : "Sephirah"] Core Suppressions have been made available via auxiliary managerial consoles."
 		var/announce_title = "[extra_core ? "Extra" : "Sephirah"] Core Suppression"

@@ -6,7 +6,7 @@
 	anchored = TRUE
 	density = TRUE
 	resistance_flags = INDESTRUCTIBLE
-	var/refine_timer = 60
+	var/refine_timer = 30
 	var/timeleft
 
 	//This system has a blackjack mechanic. It gives you a number from 2 to 21 and you have to reach it with your filters.

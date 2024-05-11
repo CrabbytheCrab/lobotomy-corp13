@@ -8,8 +8,8 @@
 	resistance_flags = INDESTRUCTIBLE
 	var/crate = /obj/structure/lootcrate
 	var/ahn_amount = 200 	//gives you a random amount of ahn between this number and 1/4th this number
-	var/power_timer = 120 	//How long does the box last for? You get 1 point every second
-	var/crate_timer = 180	//How much time until a crate?
+	var/power_timer = 60 	//How long does the box last for? You get 1 point every second
+	var/crate_timer = 90	//How much time until a crate?
 	var/crates_per_box		//Just used to calculate examine text
 	var/our_corporation		// Whatever Representative we may be linked to
 
@@ -79,8 +79,8 @@
 	desc = "A machine used to send PE to L-Corp headquarters."
 	icon_state = "machinelc"
 	crate = /obj/structure/lootcrate/l_corp
-	power_timer = 60 	//L Corp is where you drain your power
-	crate_timer = 60	//And it's super cheap
+	power_timer = 30 	//L Corp is where you drain your power
+	crate_timer = 30	//And it's super cheap
 	our_corporation = "L corp"
 
 /obj/structure/pe_sales/limbus
@@ -95,7 +95,7 @@
 	desc = "A machine used to send PE to K-Corp."
 	icon_state = "machinek"
 	crate = /obj/structure/lootcrate/k_corp
-	crate_timer = 60	//2 per, because you get one bullet per crate
+	crate_timer = 30	//2 per, because you get one bullet per crate
 	our_corporation = "K corp"
 
 /obj/structure/pe_sales/r_corp
@@ -103,7 +103,7 @@
 	desc = "A machine used to send PE to R-Corp."
 	icon_state = "machiner"
 	crate = /obj/structure/lootcrate/r_corp
-	crate_timer = 420	//The most expensive because it's R corp stuff
+	crate_timer = 210	//The most expensive because it's R corp stuff
 	our_corporation = "R corp"
 
 /obj/structure/pe_sales/s_corp
@@ -118,8 +118,8 @@
 	desc = "A machine used to send PE to W-Corp."
 	icon_state = "machinew"
 	crate = /obj/structure/lootcrate/w_corp
-	power_timer = 60 	//W Corp uses a lot of power
-	crate_timer = 120
+	power_timer = 30 	//W Corp uses a lot of power
+	crate_timer = 60
 	our_corporation = "W corp"
 
 /obj/structure/pe_sales/n_corp
@@ -158,8 +158,8 @@
 	desc = "A machine used to send PE to the hana association"
 	icon_state = "machinehana"
 	crate = /obj/structure/lootcrate/hana
-	power_timer = 180 	//Takes a long fucking time
-	crate_timer = 540	//Very expensive stuff. Takes 10 minutes to get 1 box.
+	power_timer = 90 	//Takes a long fucking time
+	crate_timer = 270	//Very expensive stuff. Takes 10 minutes to get 1 box.
 
 /obj/structure/pe_sales/zwei
 	name = "Zwei Association Power Input"
@@ -172,7 +172,7 @@
 	desc = "A machine used to send PE to the shi association."
 	icon_state = "machineshi"
 	crate = /obj/structure/lootcrate/shi
-	crate_timer = 240	//Two boxes per
+	crate_timer = 120	//Two boxes per
 
 /obj/structure/pe_sales/liu
 	name = "Liu Association Power Input"
@@ -185,14 +185,14 @@
 	desc = "A machine used to send PE to seven association."
 	icon_state = "machineseven"
 	crate = /obj/structure/lootcrate/seven
-	crate_timer = 240	//Two boxes per
+	crate_timer = 120	//Two boxes per
 
 /obj/structure/pe_sales/syndicate
 	name = "Syndicate Workshop Power Input"
 	desc = "A machine used to send PE to the syndicate workshop"
 	icon_state = "machinesyndicate"
 	crate = /obj/structure/lootcrate/syndicate
-	crate_timer = 360	//The most expensive sales, takes about 3.5 boxes. The worst you'll get is still extremely good
+	crate_timer = 180	//The most expensive sales, takes about 3.5 boxes. The worst you'll get is still extremely good
 	our_corporation = "P corp" // Extremely questionable P-Corp~
 
 /obj/structure/pe_sales/backstreet
@@ -200,8 +200,8 @@
 	desc = "A machine used to send PE to a backstreets workshop."
 	icon_state = "machinebackstreets"
 	crate = /obj/structure/lootcrate/backstreets
-	power_timer = 180 	//Takes a bit
-	crate_timer = 180	//And it's super cheap
+	power_timer = 90 	//Takes a bit
+	crate_timer = 90	//And it's super cheap
 	our_corporation = "P corp" // Extremely questionable P-Corp~
 
 /obj/structure/pe_sales/jcorp
@@ -209,5 +209,5 @@
 	desc = "A machine used to send PE to J-corp's syndicates"
 	icon_state = "machinejcorp"
 	crate = /obj/structure/lootcrate/jcorp
-	power_timer = 180 	//Takes a bit
-	crate_timer = 180	//And it's super cheap
+	power_timer = 90 	//Takes a bit
+	crate_timer = 90	//And it's super cheap

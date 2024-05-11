@@ -24,6 +24,8 @@
 	gift_type = /datum/ego_gifts/spore
 	abnormality_origin = ABNORMALITY_ORIGIN_LOBOTOMY
 
+	can_spawn = FALSE//FUCK YOU!!
+
 	var/insight_count = 0
 	var/non_insight_count = 0
 	var/list/once = list()

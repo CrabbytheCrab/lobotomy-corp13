@@ -16,6 +16,7 @@
 	)
 	var/datum/suppression/selected_core_type = null
 
+	var/list/roles = list("Manager")
 	// toggles if the window being opened is TGUI or UI, players can toggle it in case TGUI fails to load
 	var/TGUI_mode = TRUE
 
@@ -37,6 +38,9 @@
 	playsound(get_turf(src), 'sound/machines/terminal_prompt_confirm.ogg', 50, TRUE)
 
 /obj/machinery/computer/abnormality_auxiliary/ui_interact(mob/user, datum/tgui/ui)
+	if(!istype(user) || !(user.mind?.assigned_role in roles))
+		to_chat(user, span_notice("Only the manager can use this."))
+		return
 	. = ..()
 	if(TGUI_mode)
 		ui = SStgui.try_update_ui(user, src, ui)

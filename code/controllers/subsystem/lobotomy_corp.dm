@@ -48,7 +48,7 @@ SUBSYSTEM_DEF(lobotomy_corp)
 	// What ordeal level is being rolled for
 	var/next_ordeal_level = 1
 	// Minimum time for each ordeal level to occur. If requirement is not met - normal meltdown will occur
-	var/list/ordeal_timelock = list(10 MINUTES, 25 MINUTES, 45 MINUTES, 60 MINUTES, 0, 0, 0, 0, 0)
+	var/list/ordeal_timelock = list(10 MINUTES, 30 MINUTES, 60 MINUTES, 90 MINUTES, 0, 0, 0, 0, 0)
 	// Datum of the chosen ordeal. It's stored so manager can know what's about to happen
 	var/datum/ordeal/next_ordeal = null
 	/// List of currently running ordeals
@@ -91,7 +91,7 @@ SUBSYSTEM_DEF(lobotomy_corp)
 	/// Amount of abnormalities that agents achieved full understanding on
 	var/understood_abnos = 0
 	/// The amount of core suppression options that will be available
-	var/max_core_options = 3
+	var/max_core_options = 4
 	/// Points used for facility upgrades
 	var/lob_points = 2
 	/// Stats for Era/Do after an ordeal is done

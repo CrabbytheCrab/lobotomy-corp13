@@ -30,8 +30,18 @@
 	error_message = "You aren't an officer."
 	success_message = "You feel vigourous and stronger."
 
+/obj/item/trait_injector/officer_upgrade_injector/attack_self(mob/living/carbon/human/user)
+	if(!SSlobotomy_corp.injector)
+		var/list/attribute_list = list(FORTITUDE_ATTRIBUTE, PRUDENCE_ATTRIBUTE, TEMPERANCE_ATTRIBUTE, JUSTICE_ATTRIBUTE)
+		for(var/A in attribute_list)
+			var/processing = get_attribute_level(user, A)
+			if(processing >= 60)
+				to_chat(user, span_notice("The injector light flashes red. Looks like dusk needs to pass before you can use more of them."))
+				return
+	. = ..()
+
 /obj/item/trait_injector/officer_upgrade_injector/InjectTrait(mob/living/carbon/human/user)
-	user.adjust_all_attribute_levels(20)
+	user.adjust_all_attribute_levels(40)
 	..()
 	return
 

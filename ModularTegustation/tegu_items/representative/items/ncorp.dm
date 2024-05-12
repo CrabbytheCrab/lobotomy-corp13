@@ -60,7 +60,7 @@
 	name = "officer limit breaker"
 	desc = "A fluid used to increase the limit of L-Corp officer's potential. Use in hand to activate."
 	icon_state = "oddity7_gween"
-	amount = 80
+	amount = 150
 	allowed_roles = list("Records Officer", "Extraction Officer")
 
 //Temporary attributes

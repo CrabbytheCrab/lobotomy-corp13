@@ -75,8 +75,10 @@
 		// Extra cores, and announced!
 		addtimer(CALLBACK(SSlobotomy_corp, TYPE_PROC_REF(/datum/controller/subsystem/lobotomy_corp, PickPotentialSuppressions), TRUE, TRUE), 15 SECONDS)
 	/// If it was a dusk - we end running core suppression
-	else if(level == 3 && istype(SSlobotomy_corp.core_suppression))
-		addtimer(CALLBACK(SSlobotomy_corp.core_suppression, TYPE_PROC_REF(/datum/suppression, End)), 5 SECONDS)
+	else if(level == 3)
+		SSlobotomy_corp.injector = TRUE
+		if(istype(SSlobotomy_corp.core_suppression))
+			addtimer(CALLBACK(SSlobotomy_corp.core_suppression, TYPE_PROC_REF(/datum/suppression, End)), 5 SECONDS)
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_ORDEAL_END, src)
 	qdel(src)
 	return

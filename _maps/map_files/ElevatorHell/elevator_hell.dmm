@@ -11293,12 +11293,6 @@
 	},
 /turf/open/floor/carpet/red,
 /area/department_main/discipline)
-"Ic" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/lattice/catwalk,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plating,
-/area/department_main/discipline)
 "Id" = (
 /obj/effect/turf_decal/siding/wideplating{
 	dir = 10
@@ -30108,11 +30102,11 @@ Im
 vD
 eb
 oS
-Ic
+wJ
 yk
 vT
 wc
-Ic
+wJ
 uJ
 wc
 gc
@@ -30365,11 +30359,11 @@ Im
 lC
 Ke
 dh
-Ic
+wJ
 uA
 OH
 MV
-Ic
+wJ
 jv
 cV
 Kd
@@ -31650,14 +31644,14 @@ AQ
 wJ
 wJ
 wJ
-Ic
+wJ
 KU
 xc
 cj
 wJ
 wJ
 wJ
-Ic
+wJ
 Im
 jl
 jl

@@ -37,7 +37,7 @@
 
 	job_abbreviation = "EO"
 
-	job_attribute_limit = 130
+	job_attribute_limit = 120
 	roundstart_attributes = list(
 		FORTITUDE_ATTRIBUTE = 20,
 		PRUDENCE_ATTRIBUTE = 20,
@@ -72,7 +72,7 @@
 	"
 
 	job_notice = "Being in charge of handling Abnormality documentation, you should also assist new Interns and Clerks in learning how to work at L-Corp."
-
+	job_attribute_limit = 130
 	job_abbreviation = "RO"
 
 /datum/job/command/records/after_spawn(mob/living/outfit_owner, mob/M)

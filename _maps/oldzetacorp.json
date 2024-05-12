@@ -1,9 +1,9 @@
 {
 	"version": 1,
-	"map_name": "(old)Facility D-317 HORIZON",
-	"map_path": "map_files/Delta",
+	"map_name": "(old)Facility F-321 AQUATIC",
+	"map_path": "map_files/OldMaps/Zeta",
 	"map_file": [
-		"deltacorp.dmm"
+		"zetacorp.dmm"
 	],
 	"traits": [
 		{
@@ -12,6 +12,9 @@
 	],
 	"space_ruin_levels": 0,
 	"space_empty_levels": 0,
+	"shuttles": {
+		"emergency": "emergency_alpha"
+	},
 	"minetype": "none",
-	"maptype": "standard"
+	"maptype": "fishing"
 }

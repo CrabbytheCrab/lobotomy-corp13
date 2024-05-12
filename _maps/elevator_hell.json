@@ -1,9 +1,9 @@
 {
 	"version": 1,
-	"map_name": "(old)Facility F-321 AQUATIC",
-	"map_path": "map_files/Zeta",
+	"map_name": "Facility L-098 Elevator",
+	"map_path": "map_files/ElevatorHell",
 	"map_file": [
-		"zetacorp.dmm"
+		"elevator_hell.dmm"
 	],
 	"traits": [
 		{
@@ -16,5 +16,5 @@
 		"emergency": "emergency_alpha"
 	},
 	"minetype": "none",
-	"maptype": "fishing"
+	"maptype": "standard"
 }

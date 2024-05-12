@@ -1,9 +1,9 @@
 {
 	"version": 1,
-	"map_name": "(old)Facility G-866 HUB",
-	"map_path": "map_files/Eta",
+	"map_name": "(old)Facility D-317 HORIZON",
+	"map_path": "map_files/OldMaps/Delta",
 	"map_file": [
-		"etacorp.dmm"
+		"deltacorp.dmm"
 	],
 	"traits": [
 		{

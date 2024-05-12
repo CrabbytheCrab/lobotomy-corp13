@@ -1,7 +1,7 @@
 {
 	"version": 1,
 	"map_name": "(old)Facility E-553 AMALGAM",
-	"map_path": "map_files/Epsilon",
+	"map_path": "map_files/OldMaps/Epsilon",
 	"map_file": [
 		"epsiloncommand.dmm",
 		"epsiloncorp.dmm"

@@ -1,9 +1,9 @@
 {
 	"version": 1,
-	"map_name": "(old)Facility K-909 CHUTES",
-	"map_path": "map_files/Lambda",
+	"map_name": "(old)Facility A-098 ALPHA",
+	"map_path": "map_files/OldMaps/Alpha",
 	"map_file": [
-		"lambdacorp.dmm"
+		"alphacorp.dmm"
 	],
 	"traits": [
 		{

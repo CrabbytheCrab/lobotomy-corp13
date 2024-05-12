@@ -19,67 +19,69 @@ If you have over 10 players, you can enable beta and gamma, and above 20 players
 
 map alphacorp
 	votable
-	maxplayers 15
+	minplayers 0
 endmap
 
-#map betacorp
+map betacorp
 	votable
-	minplayers 10
-	maxplayers 25
+	minplayers 0
 endmap
 
-#map gammacorp
+map gammacorp
 	votable
-	minplayers 10
-	maxplayers 25
+	minplayers 0
 endmap
 
-#map deltacorp
+map deltacorp
 	votable
-	minplayers 20
+	minplayers 0
 endmap
 
-#map epsiloncorp
+map epsiloncorp
 	votable
-	minplayers 25
+	minplayers 0
 endmap
 
 map zetacorp
 	votable
-	maxplayers 15
+	minplayers 0
 endmap
 
 map etacorp
 	votable
-	maxplayers 15
+	minplayers 0
 endmap
 
-#map thetacorp
+map thetacorp
 	votable
-	minplayers 20
+	minplayers 0
 endmap
 
 map psicorp
 	votable
-	maxplayers 10
+	minplayers 0
 endmap
 
-map cityfixers
-endmap
-
-#Need testing
 map iotacorp
+	votable
+	minplayers 0
 endmap
 
 
 map kappacorp
+	votable
+	minplayers 0
 endmap
 
 map lambdacorp
+	votable
+	minplayers 0
 endmap
 
 
 map rcorp_test
+	votable
+	minplayers 0
 endmap
 
 map wcorp
@@ -98,4 +100,44 @@ map facilitytest
 endmap
 
 map runtimestation
+endmap
+
+map olddeltacorp
+	votable
+	minplayers 0
+endmap
+
+map oldepsiloncorp
+	votable
+	minplayers 0
+endmap
+
+map oldetacorp
+	votable
+	minplayers 0
+endmap
+
+map oldlambdacorp
+	votable
+	minplayers 0
+endmap
+
+map oldthetacorp
+	votable
+	minplayers 0
+endmap
+
+map oldzetacorp
+	votable
+	minplayers 0
+endmap
+
+map oldalphacorp
+	votable
+	minplayers 0
+endmap
+
+map elevator_hell
+	votable
+	minplayers 0
 endmap

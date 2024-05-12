@@ -725,3 +725,19 @@
 /datum/map_template/shuttle/snowdin/excavation
 	suffix = "excavation"
 	name = "Snowdin Excavation Elevator"
+
+/datum/map_template/shuttle/west
+	port_id = "west"
+	can_be_bought = FALSE
+
+/datum/map_template/shuttle/east
+	port_id = "east"
+	can_be_bought = FALSE
+
+/datum/map_template/shuttle/west/elevator
+	suffix = "elevator"
+	name = "west elevator"
+
+/datum/map_template/shuttle/east/elevator
+	suffix = "elevator"
+	name = "east elevator"

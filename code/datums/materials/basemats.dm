@@ -91,6 +91,14 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	beauty_modifier = 0.3 //It shines so beautiful
 	armor_modifiers = list(MELEE = 1.5, BULLET = 1.4, LASER = 0.5, ENERGY = 0.5, BOMB = 0, BIO = 0, RAD = 0, FIRE = 1, ACID = 1)
 
+/datum/material/uranium/on_applied(atom/source, amount, material_flags)
+	. = ..()
+	source.AddComponent(/datum/component/radioactive, amount / 50, source, 0) //half-life of 0 because we keep on going. amount / 50 means 40 radiation per sheet.
+
+/datum/material/uranium/on_removed(atom/source, amount, material_flags)
+	. = ..()
+	qdel(source.GetComponent(/datum/component/radioactive))
+
 /datum/material/uranium/on_accidental_mat_consumption(mob/living/carbon/victim, obj/item/source_item)
 	victim.reagents.add_reagent(/datum/reagent/uranium, rand(4, 6))
 	source_item?.reagents?.add_reagent(/datum/reagent/uranium, source_item.reagents.total_volume*(2/5))
@@ -112,6 +120,17 @@ Unless you know what you're doing, only use the first three numbers. They're in 
 	victim.reagents.add_reagent(/datum/reagent/toxin/plasma, rand(6, 8))
 	source_item?.reagents?.add_reagent(/datum/reagent/toxin/plasma, source_item.reagents.total_volume*(2/5))
 	return TRUE
+
+/datum/material/plasma/on_applied(atom/source, amount, material_flags)
+	. = ..()
+	if(ismovable(source))
+		source.AddElement(/datum/element/firestacker, amount=1)
+		source.AddComponent(/datum/component/explodable, 0, 0, amount / 2500, amount / 1250)
+
+/datum/material/plasma/on_removed(atom/source, amount, material_flags)
+	. = ..()
+	source.RemoveElement(/datum/element/firestacker, amount=1)
+	qdel(source.GetComponent(/datum/component/explodable))
 
 ///Can cause bluespace effects on use. (Teleportation) (Not yet implemented)
 /datum/material/bluespace

@@ -167,6 +167,14 @@
 /datum/chemical_reaction/poultice
 	required_reagents = list(/datum/reagent/toxin/bungotoxin = 20, /datum/reagent/cellulose = 20, /datum/reagent/consumable/aloejuice = 20)
 
+/datum/chemical_reaction/strange_reagent
+	results = list(/datum/reagent/medicine/strange_reagent = 3)
+	required_reagents = list(/datum/reagent/medicine/omnizine = 1, /datum/reagent/water/holywater = 1, /datum/reagent/toxin/mutagen = 1)
+
+/datum/chemical_reaction/strange_reagent/alt
+	results = list(/datum/reagent/medicine/strange_reagent = 2)
+	required_reagents = list(/datum/reagent/medicine/omnizine/protozine = 1, /datum/reagent/water/holywater = 1, /datum/reagent/toxin/mutagen = 1)
+
 /datum/chemical_reaction/poultice/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
 	for(var/i in 1 to created_volume)

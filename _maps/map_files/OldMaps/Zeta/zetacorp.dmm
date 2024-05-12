@@ -4110,7 +4110,7 @@
 	color = "#7D6521";
 	dir = 1
 	},
-/obj/effect/landmark/refinerspawn,
+/obj/machinery/vending/custom/unbreakable,
 /turf/open/floor/facility/dark,
 /area/department_main/command)
 "zD" = (
@@ -7762,13 +7762,6 @@
 /obj/item/restraints/handcuffs,
 /turf/open/floor/carpet,
 /area/department_main/control)
-"VE" = (
-/obj/effect/turf_decal/siding{
-	color = "#7D6521"
-	},
-/obj/machinery/text_adventure_console,
-/turf/open/floor/carpet/royalblack,
-/area/department_main/command)
 "VH" = (
 /obj/effect/landmark/latejoin,
 /obj/effect/turf_decal/tile/brown,
@@ -39715,7 +39708,7 @@ NL
 sX
 aY
 rY
-VE
+vv
 NL
 xN
 Dj

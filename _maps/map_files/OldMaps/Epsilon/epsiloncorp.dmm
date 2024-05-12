@@ -468,8 +468,8 @@
 /turf/open/floor/carpet,
 /area/department_main/control)
 "hx" = (
-/obj/item/toy/plush/binah,
 /obj/structure/closet/crate,
+/obj/item/toy/plush/binah,
 /turf/open/floor/plasteel/dark,
 /area/department_main/extraction)
 "hE" = (
@@ -1396,10 +1396,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/department_main/control)
-"uS" = (
-/obj/effect/landmark/refinerspawn,
-/turf/open/floor/plasteel/dark,
-/area/department_main/extraction)
 "uY" = (
 /obj/effect/turf_decal/siding/purple,
 /obj/machinery/computer/abnormality_archive{
@@ -1969,10 +1965,6 @@
 /obj/machinery/telecomms/server/presets/engineering,
 /turf/open/floor/circuit/telecomms/mainframe,
 /area/department_main/information)
-"DH" = (
-/obj/machinery/text_adventure_console,
-/turf/open/floor/plasteel/dark,
-/area/department_main/extraction)
 "DM" = (
 /turf/closed/indestructible/reinforced,
 /area/department_main/records)
@@ -54823,7 +54815,7 @@ QD
 QD
 KP
 hK
-VR
+kU
 aA
 KP
 hd
@@ -55593,7 +55585,7 @@ QD
 QD
 QD
 KP
-DH
+VR
 kU
 kU
 kU
@@ -55852,7 +55844,7 @@ QD
 KP
 KP
 fu
-uS
+kU
 kU
 kU
 kU

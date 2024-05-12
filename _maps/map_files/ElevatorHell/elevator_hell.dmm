@@ -3247,7 +3247,7 @@
 	dir = 4;
 	light_color = "#e8eaff"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/space/basic,
 /area/department_main/welfare)
 "jF" = (
 /obj/effect/turf_decal/siding/yellow{
@@ -4937,7 +4937,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/space/basic,
 /area/department_main/welfare)
 "oO" = (
 /obj/effect/turf_decal/siding/brown{
@@ -7352,7 +7352,7 @@
 /obj/effect/turf_decal/siding{
 	color = "#7D6521"
 	},
-/obj/effect/landmark/refinerspawn,
+/obj/structure/closet/crate,
 /turf/open/floor/carpet/royalblack,
 /area/department_main/extraction)
 "wa" = (
@@ -8647,14 +8647,6 @@
 	},
 /turf/open/floor/carpet/stellar,
 /area/department_main/command)
-"zz" = (
-/obj/effect/turf_decal/siding{
-	color = "#7D6521";
-	dir = 5
-	},
-/obj/machinery/computer/extraction_cargo,
-/turf/open/floor/carpet/royalblack,
-/area/department_main/extraction)
 "zD" = (
 /obj/effect/turf_decal/siding/blue{
 	color = "#3234B9"
@@ -9062,8 +9054,8 @@
 /obj/effect/turf_decal/siding{
 	color = "#7D6521"
 	},
-/obj/machinery/light,
 /obj/structure/closet/crate,
+/obj/machinery/light,
 /turf/open/floor/carpet/royalblack,
 /area/department_main/extraction)
 "Bj" = (
@@ -10078,12 +10070,12 @@
 /area/department_main/information)
 "Em" = (
 /obj/effect/turf_decal/siding{
-	color = "#7D6521"
+	color = "#7D6521";
+	dir = 6
 	},
 /obj/structure/disposalpipe/segment{
 	resistance_flags = 115
 	},
-/obj/machinery/text_adventure_console,
 /turf/open/floor/carpet/royalblack,
 /area/department_main/extraction)
 "En" = (
@@ -10099,6 +10091,10 @@
 /turf/open/floor/plasteel/dark/side,
 /area/facility_hallway/control)
 "Eo" = (
+/obj/effect/turf_decal/siding{
+	color = "#7D6521";
+	dir = 4
+	},
 /obj/structure/disposalpipe/segment{
 	resistance_flags = 115
 	},
@@ -11109,9 +11105,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/facility_hallway/records)
-"Hk" = (
-/turf/closed/indestructible/reinforced,
-/area/space)
 "Hn" = (
 /obj/effect/turf_decal/tile/green,
 /obj/effect/turf_decal/tile/green{
@@ -11299,6 +11292,12 @@
 	dir = 5
 	},
 /turf/open/floor/carpet/red,
+/area/department_main/discipline)
+"Ic" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/lattice/catwalk,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating,
 /area/department_main/discipline)
 "Id" = (
 /obj/effect/turf_decal/siding/wideplating{
@@ -13433,14 +13432,14 @@
 /turf/open/floor/carpet/orange,
 /area/department_main/training)
 "Pb" = (
+/obj/machinery/computer/extraction_cargo,
 /obj/effect/turf_decal/siding{
 	color = "#7D6521";
-	dir = 1
+	dir = 5
 	},
 /obj/structure/disposalpipe/segment{
 	resistance_flags = 115
 	},
-/obj/machinery/computer/ego_purchase,
 /turf/open/floor/carpet/royalblack,
 /area/department_main/extraction)
 "Pc" = (
@@ -30109,11 +30108,11 @@ Im
 vD
 eb
 oS
-wJ
+Ic
 yk
 vT
 wc
-wJ
+Ic
 uJ
 wc
 gc
@@ -30366,11 +30365,11 @@ Im
 lC
 Ke
 dh
-wJ
+Ic
 uA
 OH
 MV
-wJ
+Ic
 jv
 cV
 Kd
@@ -31651,14 +31650,14 @@ AQ
 wJ
 wJ
 wJ
-wJ
+Ic
 KU
 xc
 cj
 wJ
 wJ
 wJ
-wJ
+Ic
 Im
 jl
 jl
@@ -52177,10 +52176,10 @@ VQ
 qU
 VQ
 VQ
-zz
-ym
-ym
-tu
+VQ
+aE
+wm
+aE
 VQ
 jl
 jl
@@ -52435,9 +52434,9 @@ pa
 jZ
 ns
 VQ
-aE
-wm
-aE
+HA
+gh
+gh
 VQ
 jl
 jl
@@ -52692,9 +52691,9 @@ fs
 jR
 ns
 VQ
-HA
 gh
-gh
+zW
+AU
 VQ
 jl
 jl
@@ -52950,8 +52949,8 @@ jR
 ns
 VQ
 gh
-zW
-AU
+gh
+gh
 VQ
 jl
 jl
@@ -53206,9 +53205,9 @@ BJ
 jR
 ns
 VQ
-gh
-gh
-gh
+VQ
+VQ
+VQ
 VQ
 jl
 jl
@@ -53462,11 +53461,11 @@ as
 fs
 tc
 ns
-Hk
-Hk
-Hk
-Hk
-Hk
+jl
+jl
+jl
+jl
+jl
 jl
 jl
 jl

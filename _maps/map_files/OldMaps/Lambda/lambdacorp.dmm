@@ -4054,12 +4054,6 @@
 	dir = 4;
 	color = "#cd00cd"
 	},
-/obj/machinery/button/door/indestructible{
-	id = "extraction";
-	name = "Extraction Access Shutters";
-	pixel_y = -27;
-	req_one_access_txt = "19"
-	},
 /turf/open/floor/plasteel/sepia,
 /area/department_main/information)
 "oj" = (
@@ -10592,7 +10586,6 @@
 	dir = 4;
 	color = "#cd00cd"
 	},
-/obj/effect/landmark/refinerspawn,
 /turf/open/floor/plasteel/sepia,
 /area/department_main/information)
 "Nc" = (
@@ -12560,6 +12553,12 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/yellow,
+/obj/machinery/button/door/indestructible{
+	id = "extraction";
+	name = "Extraction Access Shutters";
+	pixel_y = -27;
+	req_one_access_txt = "19"
+	},
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
@@ -12568,7 +12567,6 @@
 	dir = 4;
 	color = "#cd00cd"
 	},
-/obj/machinery/text_adventure_console,
 /turf/open/floor/plasteel/sepia,
 /area/department_main/information)
 "TW" = (

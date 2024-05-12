@@ -144,7 +144,7 @@
 	display_order = JOB_DISPLAY_ORDER_CAPTAIN
 	normal_attribute_level = 21
 	access = list(ACCESS_COMMAND) // LC13:To-Do
-	exp_requirements = 6000
+	exp_requirements = 0
 	exp_type = EXP_TYPE_CREW
 	exp_type_department = EXP_TYPE_SECURITY
 	mapexclude = list("wonderlabs", "mini")

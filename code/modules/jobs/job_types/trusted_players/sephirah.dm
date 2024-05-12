@@ -5,7 +5,7 @@
 	total_positions = 3
 	spawn_positions = 3
 	display_order = JOB_DISPLAY_ORDER_SEPHIRAH
-	trusted_only = TRUE
+	//trusted_only = TRUE
 	access = list(ACCESS_NETWORK, ACCESS_COMMAND, ACCESS_MANAGER) // Network is the trusted chat gamer access
 	minimal_access = list(ACCESS_NETWORK, ACCESS_COMMAND, ACCESS_MANAGER)
 	mapexclude = list("wonderlabs", "mini")

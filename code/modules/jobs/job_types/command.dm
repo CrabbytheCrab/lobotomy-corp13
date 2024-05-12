@@ -24,7 +24,7 @@
 	selection_color = "#ccccff"
 	display_order = JOB_DISPLAY_ORDER_COMMAND
 
-	exp_requirements = 360
+	exp_requirements = 0
 	exp_type = EXP_TYPE_CREW
 	minimal_player_age = 5
 
@@ -37,7 +37,7 @@
 
 	job_abbreviation = "EO"
 
-	job_attribute_limit = 60
+	job_attribute_limit = 130
 	roundstart_attributes = list(
 		FORTITUDE_ATTRIBUTE = 20,
 		PRUDENCE_ATTRIBUTE = 20,
@@ -63,7 +63,7 @@
 /datum/job/command/records
 	title = "Records Officer"
 	outfit = /datum/outfit/job/command/records
-	exp_requirements = 600
+	exp_requirements = 0
 	job_important = "\
 		You are the Records Officer. Your job is to manage Records. \
 		You have filing cabinets in the back of your office filled with information about Abnormalities; \

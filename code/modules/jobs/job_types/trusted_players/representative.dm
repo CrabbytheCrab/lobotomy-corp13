@@ -9,7 +9,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	display_order = JOB_DISPLAY_ORDER_REPRESENTATIVE
-	trusted_only = TRUE
+	//trusted_only = TRUE
 	access = list(ACCESS_PHARMACY, ACCESS_COMMAND) // I want to use the number 69.
 	minimal_access = list(ACCESS_PHARMACY, ACCESS_COMMAND)
 	mapexclude = list("wonderlabs", "mini")

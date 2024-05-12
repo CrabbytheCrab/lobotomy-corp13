@@ -8,7 +8,7 @@
 	selection_color = "#bcbcef"
 	display_order = JOB_DISPLAY_ORDER_MANAGER
 
-	exp_requirements = 720
+	exp_requirements = 0
 	exp_type = EXP_TYPE_CREW
 	minimal_player_age = 7
 

@@ -366,10 +366,10 @@ Any attempt to code risk class armor will result in a 10 day Github ban.*/
 
 	if(current_holder && (weakened == TRUE))
 		playsound(current_holder, "sound/abnormalities/seasons/[current_season]_change.ogg", 50, FALSE)
-	//	if(!warning_message)
-			//to_chat(current_holder, span_notice("[src] has been weakened by the turn of a new season."))
-			//return
-	//	to_chat(current_holder, span_notice("[warning_message]"))
+		if(!warning_message)
+			to_chat(current_holder, span_notice("[src] hasn't been weakened by the turn of a new season."))
+			return
+		to_chat(current_holder, span_notice("[warning_message]"))
 
 /obj/effect/proc_holder/ability/seasons_toggle
 	name = "Transformation"

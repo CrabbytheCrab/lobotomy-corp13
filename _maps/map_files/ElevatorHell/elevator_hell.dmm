@@ -581,6 +581,14 @@
 	},
 /turf/open/floor/wood,
 /area/department_main/command)
+"bX" = (
+/obj/effect/turf_decal/siding{
+	color = "#7D6521";
+	dir = 5
+	},
+/obj/machinery/computer/extraction_cargo,
+/turf/open/floor/carpet/royalblack,
+/area/department_main/extraction)
 "bZ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9;
@@ -7179,6 +7187,9 @@
 	dir = 6
 	},
 /area/department_main/control)
+"vv" = (
+/turf/closed/indestructible/reinforced,
+/area/space)
 "vw" = (
 /obj/effect/turf_decal/siding/brown/corner{
 	dir = 8
@@ -7352,7 +7363,7 @@
 /obj/effect/turf_decal/siding{
 	color = "#7D6521"
 	},
-/obj/structure/closet/crate,
+/obj/effect/landmark/refinerspawn,
 /turf/open/floor/carpet/royalblack,
 /area/department_main/extraction)
 "wa" = (
@@ -9054,8 +9065,8 @@
 /obj/effect/turf_decal/siding{
 	color = "#7D6521"
 	},
-/obj/structure/closet/crate,
 /obj/machinery/light,
+/obj/structure/closet/crate,
 /turf/open/floor/carpet/royalblack,
 /area/department_main/extraction)
 "Bj" = (
@@ -10070,12 +10081,12 @@
 /area/department_main/information)
 "Em" = (
 /obj/effect/turf_decal/siding{
-	color = "#7D6521";
-	dir = 6
+	color = "#7D6521"
 	},
 /obj/structure/disposalpipe/segment{
 	resistance_flags = 115
 	},
+/obj/machinery/text_adventure_console,
 /turf/open/floor/carpet/royalblack,
 /area/department_main/extraction)
 "En" = (
@@ -10091,10 +10102,6 @@
 /turf/open/floor/plasteel/dark/side,
 /area/facility_hallway/control)
 "Eo" = (
-/obj/effect/turf_decal/siding{
-	color = "#7D6521";
-	dir = 4
-	},
 /obj/structure/disposalpipe/segment{
 	resistance_flags = 115
 	},
@@ -13426,14 +13433,14 @@
 /turf/open/floor/carpet/orange,
 /area/department_main/training)
 "Pb" = (
-/obj/machinery/computer/extraction_cargo,
 /obj/effect/turf_decal/siding{
 	color = "#7D6521";
-	dir = 5
+	dir = 1
 	},
 /obj/structure/disposalpipe/segment{
 	resistance_flags = 115
 	},
+/obj/machinery/computer/extraction_cargo,
 /turf/open/floor/carpet/royalblack,
 /area/department_main/extraction)
 "Pc" = (
@@ -52170,10 +52177,10 @@ VQ
 qU
 VQ
 VQ
-VQ
-aE
-wm
-aE
+bX
+ym
+ym
+tu
 VQ
 jl
 jl
@@ -52428,9 +52435,9 @@ pa
 jZ
 ns
 VQ
-HA
-gh
-gh
+aE
+wm
+aE
 VQ
 jl
 jl
@@ -52685,9 +52692,9 @@ fs
 jR
 ns
 VQ
+HA
 gh
-zW
-AU
+gh
 VQ
 jl
 jl
@@ -52943,8 +52950,8 @@ jR
 ns
 VQ
 gh
-gh
-gh
+zW
+AU
 VQ
 jl
 jl
@@ -53199,9 +53206,9 @@ BJ
 jR
 ns
 VQ
-VQ
-VQ
-VQ
+gh
+gh
+gh
 VQ
 jl
 jl
@@ -53455,11 +53462,11 @@ as
 fs
 tc
 ns
-jl
-jl
-jl
-jl
-jl
+vv
+vv
+vv
+vv
+vv
 jl
 jl
 jl

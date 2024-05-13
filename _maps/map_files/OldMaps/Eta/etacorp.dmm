@@ -878,6 +878,9 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/department_main/command)
+"dc" = (
+/turf/open/floor/carpet/royalblack,
+/area/department_main/extraction)
 "de" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -2136,6 +2139,10 @@
 "ht" = (
 /turf/open/floor/wood,
 /area/department_main/training)
+"hu" = (
+/obj/effect/landmark/refinerspawn,
+/turf/open/floor/facility/dark,
+/area/department_main/extraction)
 "hv" = (
 /obj/effect/turf_decal/siding/red{
 	dir = 8
@@ -3322,6 +3329,12 @@
 	},
 /turf/open/floor/carpet/stellar,
 /area/facility_hallway/west)
+"lE" = (
+/obj/structure/sign/poster/lobotomycorp/random{
+	pixel_x = 32
+	},
+/turf/closed/indestructible/reinforced,
+/area/department_main/extraction)
 "lG" = (
 /obj/machinery/door/airlock/highsecurity{
 	name = "Disciplinary Department"
@@ -3568,6 +3581,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/department_main/command)
+"mq" = (
+/obj/machinery/text_adventure_console,
+/turf/open/floor/facility/dark,
+/area/department_main/extraction)
 "mr" = (
 /obj/structure/sign/painting/library{
 	pixel_x = 32
@@ -4326,10 +4343,7 @@
 	},
 /obj/effect/turf_decal/siding{
 	color = "#7D6521";
-	dir = 5
-	},
-/obj/structure/sign/poster/lobotomycorp/random{
-	pixel_x = 32
+	dir = 1
 	},
 /turf/open/floor/carpet/royalblack,
 /area/department_main/extraction)
@@ -9974,6 +9988,13 @@
 	},
 /turf/open/floor/carpet/stellar,
 /area/facility_hallway/command)
+"IX" = (
+/obj/structure/chair/office,
+/obj/effect/turf_decal/siding{
+	color = "#7D6521"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/department_main/extraction)
 "IY" = (
 /obj/effect/turf_decal/bot,
 /obj/machinery/telecomms/receiver/preset_right,
@@ -12905,6 +12926,16 @@
 	},
 /turf/open/floor/carpet/purple,
 /area/department_main/information)
+"Td" = (
+/obj/structure/chair/office{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding{
+	color = "#7D6521";
+	dir = 5
+	},
+/turf/open/floor/carpet/royalblack,
+/area/department_main/extraction)
 "Tg" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -50277,10 +50308,10 @@ Gh
 Gh
 dJ
 pm
-qi
-qi
-qi
-YK
+dc
+dc
+dc
+IX
 hI
 Gh
 Gh
@@ -50502,13 +50533,13 @@ wd
 wd
 wd
 Gh
-Gh
-Gh
-yY
-lp
-Lp
-Gh
-Gh
+mq
+Td
+qi
+qi
+qi
+YK
+hu
 Gh
 wd
 wd
@@ -50729,13 +50760,13 @@ wd
 wd
 wd
 wd
-wd
+Gh
+lE
+yY
+lp
+Lp
 Gh
 Gh
-Gh
-Gh
-Gh
-wd
 wd
 wd
 wd
@@ -50957,11 +50988,11 @@ wd
 wd
 wd
 wd
-wd
-wd
-wd
-wd
-wd
+Gh
+Gh
+Gh
+Gh
+Gh
 wd
 wd
 wd

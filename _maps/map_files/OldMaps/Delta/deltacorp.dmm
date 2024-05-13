@@ -3894,6 +3894,14 @@
 /obj/item/melee/classic_baton,
 /turf/open/floor/carpet/red,
 /area/department_main/discipline)
+"lG" = (
+/obj/effect/turf_decal/siding/white/corner{
+	color = "#7D6521";
+	dir = 1
+	},
+/obj/structure/rack,
+/turf/open/floor/plasteel/dark,
+/area/department_main/extraction)
 "lH" = (
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 8
@@ -4180,15 +4188,14 @@
 /turf/open/floor/plasteel/dark,
 /area/facility_hallway/discipline)
 "mw" = (
-/obj/structure/table/reinforced,
-/obj/item/encryptionkey/headset_architecture,
-/obj/item/clothing/accessory/armband/lobotomy/extraction,
-/obj/item/clothing/accessory/armband/lobotomy/extraction,
-/obj/item/clothing/accessory/armband/lobotomy/extraction,
-/obj/effect/turf_decal/siding/white/corner{
-	color = "#7D6521";
-	dir = 1
+/obj/machinery/light/cold/no_nightlight{
+	dir = 4
 	},
+/obj/effect/turf_decal/siding{
+	color = "#7D6521";
+	dir = 8
+	},
+/obj/effect/landmark/refinerspawn,
 /turf/open/floor/plasteel/dark,
 /area/department_main/extraction)
 "mx" = (
@@ -5235,6 +5242,13 @@
 /obj/machinery/door/airlock/grunge,
 /turf/open/floor/facility/halls,
 /area/department_main/records)
+"pn" = (
+/obj/machinery/conveyor_switch/oneway{
+	pixel_y = 12
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/department_main/extraction)
 "po" = (
 /obj/machinery/telecomms/server/presets/security,
 /turf/open/floor/circuit/telecomms/mainframe,
@@ -13088,9 +13102,10 @@
 /area/facility_hallway/east)
 "MO" = (
 /obj/structure/table/reinforced,
-/obj/machinery/conveyor_switch/oneway{
-	pixel_y = 12
-	},
+/obj/item/encryptionkey/headset_architecture,
+/obj/item/clothing/accessory/armband/lobotomy/extraction,
+/obj/item/clothing/accessory/armband/lobotomy/extraction,
+/obj/item/clothing/accessory/armband/lobotomy/extraction,
 /turf/open/floor/plasteel/dark,
 /area/department_main/extraction)
 "MQ" = (
@@ -13525,14 +13540,11 @@
 /turf/open/floor/plasteel/dark,
 /area/department_main/extraction)
 "NN" = (
-/obj/structure/rack,
-/obj/machinery/light/cold/no_nightlight{
-	dir = 4
-	},
 /obj/effect/turf_decal/siding{
 	color = "#7D6521";
 	dir = 8
 	},
+/obj/machinery/text_adventure_console,
 /turf/open/floor/plasteel/dark,
 /area/department_main/extraction)
 "NO" = (
@@ -65144,9 +65156,9 @@ Mw
 My
 Nk
 MO
+pn
 hz
 Cu
-JB
 JB
 OP
 ls
@@ -65401,9 +65413,9 @@ YD
 YD
 YD
 YD
+YD
 Nl
 Cu
-JB
 JB
 OP
 ls
@@ -65658,9 +65670,9 @@ Gj
 Gj
 Gj
 Gj
+Gj
 Nw
 Cu
-JB
 JB
 OP
 ls
@@ -65916,8 +65928,8 @@ Vs
 ie
 NN
 mw
+lG
 Cu
-JB
 JB
 OP
 ls
@@ -66174,7 +66186,7 @@ Cu
 Cu
 Cu
 Cu
-JB
+Cu
 JB
 OP
 ls

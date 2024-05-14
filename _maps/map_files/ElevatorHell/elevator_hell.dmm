@@ -581,14 +581,6 @@
 	},
 /turf/open/floor/wood,
 /area/department_main/command)
-"bX" = (
-/obj/effect/turf_decal/siding{
-	color = "#7D6521";
-	dir = 5
-	},
-/obj/machinery/computer/extraction_cargo,
-/turf/open/floor/carpet/royalblack,
-/area/department_main/extraction)
 "bZ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 9;
@@ -7187,9 +7179,6 @@
 	dir = 6
 	},
 /area/department_main/control)
-"vv" = (
-/turf/closed/indestructible/reinforced,
-/area/space)
 "vw" = (
 /obj/effect/turf_decal/siding/brown/corner{
 	dir = 8
@@ -8658,6 +8647,14 @@
 	},
 /turf/open/floor/carpet/stellar,
 /area/department_main/command)
+"zz" = (
+/obj/effect/turf_decal/siding{
+	color = "#7D6521";
+	dir = 5
+	},
+/obj/machinery/computer/extraction_cargo,
+/turf/open/floor/carpet/royalblack,
+/area/department_main/extraction)
 "zD" = (
 /obj/effect/turf_decal/siding/blue{
 	color = "#3234B9"
@@ -11112,6 +11109,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/facility_hallway/records)
+"Hk" = (
+/turf/closed/indestructible/reinforced,
+/area/space)
 "Hn" = (
 /obj/effect/turf_decal/tile/green,
 /obj/effect/turf_decal/tile/green{
@@ -13440,7 +13440,7 @@
 /obj/structure/disposalpipe/segment{
 	resistance_flags = 115
 	},
-/obj/machinery/computer/extraction_cargo,
+/obj/machinery/computer/ego_purchase,
 /turf/open/floor/carpet/royalblack,
 /area/department_main/extraction)
 "Pc" = (
@@ -52177,7 +52177,7 @@ VQ
 qU
 VQ
 VQ
-bX
+zz
 ym
 ym
 tu
@@ -53462,11 +53462,11 @@ as
 fs
 tc
 ns
-vv
-vv
-vv
-vv
-vv
+Hk
+Hk
+Hk
+Hk
+Hk
 jl
 jl
 jl

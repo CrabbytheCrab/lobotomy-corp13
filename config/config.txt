@@ -16,10 +16,10 @@ $include interviews.txt
 # There are various options which are hard-locked for security reasons.
 
 ## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'tgstation' with the name of your choice.
-SERVERNAME Lobotomy Corporation 13 (Unofficial)
+SERVERNAME Lobotomy Corporation 13 Fan Server
 
 ## Server Caption: Shows next to the server name in the BYOND hub.
-SERVERCAPTION It's management time!
+SERVERCAPTION It's management time but better!
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
 # SERVERSQLNAME tgstation

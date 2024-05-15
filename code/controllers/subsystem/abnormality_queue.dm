@@ -36,8 +36,8 @@ SUBSYSTEM_DEF(abnormality_queue)
 	var/next_abno_spawn_time = 6 MINUTES
 	/// Tracks if the current pick is forced
 	var/fucked_it_lets_rolled = FALSE
-	/// Due to Managers not passing the Litmus Test, divine approval is now necessary for red roll
-	var/hardcore_roll_enabled = FALSE
+	/// Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.  Fuck it we roll.
+	var/hardcore_roll_enabled = TRUE
 
 /datum/controller/subsystem/abnormality_queue/Initialize(timeofday)
 	RegisterSignal(SSdcs, COMSIG_GLOB_ORDEAL_END, PROC_REF(OnOrdealEnd))

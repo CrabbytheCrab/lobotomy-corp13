@@ -3247,7 +3247,7 @@
 	dir = 4;
 	light_color = "#e8eaff"
 	},
-/turf/open/space/basic,
+/turf/open/floor/plasteel/dark,
 /area/department_main/welfare)
 "jF" = (
 /obj/effect/turf_decal/siding/yellow{
@@ -4937,7 +4937,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/space/basic,
+/turf/open/floor/plasteel/dark,
 /area/department_main/welfare)
 "oO" = (
 /obj/effect/turf_decal/siding/brown{

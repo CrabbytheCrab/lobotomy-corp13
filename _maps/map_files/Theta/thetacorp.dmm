@@ -215,7 +215,7 @@
 /area/department_main/training)
 "aR" = (
 /obj/structure/table/wood/fancy/green,
-/obj/structure/window/reinforced/spawner/north{
+/obj/structure/window_new/reinforced/spawner/north{
 	max_integrity = 25;
 	resistance_flags = 115
 	},
@@ -404,7 +404,7 @@
 	},
 /area/facility_hallway/human)
 "bt" = (
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -869,7 +869,7 @@
 /turf/open/floor/carpet/green,
 /area/department_main/safety)
 "da" = (
-/obj/structure/window/reinforced/fulltile{
+/obj/structure/window_new/reinforced/fulltile{
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70);
 	max_integrity = 500
 	},
@@ -1013,7 +1013,7 @@
 /area/department_main/control)
 "du" = (
 /obj/effect/spawner/abnormality_room,
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -1158,7 +1158,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/department_main/control)
 "dV" = (
-/obj/structure/window/reinforced/spawner{
+/obj/structure/window_new/reinforced/spawner{
 	resistance_flags = 115
 	},
 /obj/effect/landmark/refinerspawn,
@@ -1167,7 +1167,7 @@
 	},
 /area/department_main/extraction)
 "dW" = (
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -2003,7 +2003,7 @@
 /area/facility_hallway/safety)
 "gy" = (
 /obj/effect/spawner/abnormality_room,
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -2356,7 +2356,7 @@
 /area/facility_hallway/safety)
 "hC" = (
 /obj/structure/table/wood/fancy/purple,
-/obj/structure/window/reinforced/spawner{
+/obj/structure/window_new/reinforced/spawner{
 	resistance_flags = 115
 	},
 /obj/machinery/recharger{
@@ -3006,7 +3006,7 @@
 	},
 /area/facility_hallway/safety)
 "jX" = (
-/obj/structure/window/reinforced/fulltile{
+/obj/structure/window_new/reinforced/fulltile{
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70);
 	max_integrity = 500
 	},
@@ -3211,10 +3211,10 @@
 /area/department_main/safety)
 "kD" = (
 /obj/structure/table/wood/fancy/purple,
-/obj/structure/window/reinforced/spawner/east{
+/obj/structure/window_new/reinforced/spawner/east{
 	resistance_flags = 115
 	},
-/obj/structure/window/reinforced/spawner{
+/obj/structure/window_new/reinforced/spawner{
 	resistance_flags = 115
 	},
 /obj/machinery/photocopier{
@@ -3437,7 +3437,7 @@
 	dir = 1;
 	pixel_x = -6
 	},
-/obj/structure/window/reinforced/spawner/east{
+/obj/structure/window_new/reinforced/spawner/east{
 	resistance_flags = 115
 	},
 /turf/open/floor/plasteel/sepia{
@@ -3540,7 +3540,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/department_main/training)
 "lA" = (
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -3581,7 +3581,7 @@
 	},
 /area/facility_hallway/training)
 "lF" = (
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -3741,7 +3741,7 @@
 	},
 /area/facility_hallway/information)
 "mj" = (
-/turf/closed/indestructible/reinforced,
+/turf/closed/indestructible/reinforced/newer,
 /area/facility_hallway/training)
 "mo" = (
 /obj/structure/disposalpipe/segment,
@@ -3783,7 +3783,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/department_main/command)
 "mu" = (
-/obj/structure/window/reinforced/fulltile{
+/obj/structure/window_new/reinforced/fulltile{
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70);
 	max_integrity = 500
 	},
@@ -4008,7 +4008,7 @@
 	},
 /area/department_main/control)
 "nq" = (
-/obj/structure/window/reinforced/fulltile/indestructable,
+/obj/structure/window_new/reinforced/fulltile/indestructable,
 /turf/open/floor/facility/dark{
 	color = "#ccc8c0"
 	},
@@ -4305,7 +4305,7 @@
 	},
 /area/facility_hallway/command)
 "oK" = (
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -4837,11 +4837,11 @@
 /area/department_main/command)
 "qB" = (
 /obj/structure/table/wood/fancy/purple,
-/obj/structure/window/reinforced/spawner/west{
+/obj/structure/window_new/reinforced/spawner/west{
 	max_integrity = 25;
 	resistance_flags = 115
 	},
-/obj/structure/window/reinforced/spawner{
+/obj/structure/window_new/reinforced/spawner{
 	resistance_flags = 115
 	},
 /obj/machinery/photocopier{
@@ -5350,7 +5350,7 @@
 /area/facility_hallway/training)
 "sv" = (
 /obj/effect/spawner/abnormality_room,
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -6229,7 +6229,7 @@
 /area/facility_hallway/training)
 "vs" = (
 /obj/structure/table/wood/fancy/green,
-/obj/structure/window/reinforced/spawner{
+/obj/structure/window_new/reinforced/spawner{
 	resistance_flags = 115
 	},
 /obj/item/reagent_containers/hypospray/medipen/salacid,
@@ -7237,7 +7237,7 @@
 /turf/open/floor/plasteel/dark,
 /area/facility_hallway/training)
 "za" = (
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -7619,7 +7619,7 @@
 	},
 /area/facility_hallway/information)
 "Am" = (
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall";
 	opacity = 0
@@ -8050,7 +8050,7 @@
 /area/department_main/safety)
 "BY" = (
 /obj/structure/table/wood/fancy/green,
-/obj/structure/window/reinforced/spawner/east{
+/obj/structure/window_new/reinforced/spawner/east{
 	resistance_flags = 115
 	},
 /obj/item/paper_bin{
@@ -8186,7 +8186,7 @@
 	},
 /area/facility_hallway/information)
 "Cq" = (
-/obj/structure/window/reinforced/fulltile{
+/obj/structure/window_new/reinforced/fulltile{
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70);
 	max_integrity = 500
 	},
@@ -8249,7 +8249,7 @@
 /area/facility_hallway/command)
 "CA" = (
 /obj/structure/table/wood/fancy/green,
-/obj/structure/window/reinforced/spawner/north{
+/obj/structure/window_new/reinforced/spawner/north{
 	max_integrity = 25;
 	resistance_flags = 115
 	},
@@ -8473,7 +8473,7 @@
 /area/department_main/safety)
 "Dz" = (
 /obj/machinery/smartfridge/extraction_storage/ego_armor,
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall";
 	opacity = 0
@@ -8826,7 +8826,7 @@
 	},
 /area/facility_hallway/west)
 "EH" = (
-/obj/structure/window/reinforced/fulltile{
+/obj/structure/window_new/reinforced/fulltile{
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70);
 	max_integrity = 500;
 	opacity = 1
@@ -9161,7 +9161,7 @@
 /turf/open/floor/facility/halls,
 /area/department_main/records)
 "FL" = (
-/obj/structure/window/reinforced/fulltile{
+/obj/structure/window_new/reinforced/fulltile{
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70);
 	max_integrity = 500
 	},
@@ -9200,7 +9200,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/department_main/training)
 "FS" = (
-/obj/structure/window/reinforced/fulltile{
+/obj/structure/window_new/reinforced/fulltile{
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70);
 	max_integrity = 500;
 	opacity = 1
@@ -9614,7 +9614,7 @@
 	dir = 1;
 	resistance_flags = 115
 	},
-/obj/structure/window/reinforced/spawner{
+/obj/structure/window_new/reinforced/spawner{
 	resistance_flags = 115
 	},
 /turf/open/floor/carpet/green,
@@ -9641,7 +9641,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/facility_hallway/safety)
 "Hh" = (
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -9689,7 +9689,7 @@
 /area/department_main/command)
 "Hr" = (
 /obj/structure/table/wood/fancy/green,
-/obj/structure/window/reinforced/spawner{
+/obj/structure/window_new/reinforced/spawner{
 	resistance_flags = 115
 	},
 /obj/item/reagent_containers/hypospray/medipen/mental,
@@ -10409,7 +10409,7 @@
 	},
 /area/facility_hallway/training)
 "Jr" = (
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -10734,7 +10734,7 @@
 /area/facility_hallway/training)
 "Ke" = (
 /obj/effect/spawner/abnormality_room,
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -10764,7 +10764,7 @@
 /obj/machinery/computer/extraction_cargo{
 	dir = 8
 	},
-/obj/structure/window/reinforced/spawner/east{
+/obj/structure/window_new/reinforced/spawner/east{
 	resistance_flags = 115
 	},
 /turf/open/floor/facility/dark{
@@ -10862,7 +10862,7 @@
 	set_cap = 3;
 	set_luminosity = 24
 	},
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -10931,13 +10931,13 @@
 /area/facility_hallway/safety)
 "La" = (
 /obj/effect/landmark/salesspawn,
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
 /area/department_main/extraction)
 "Lb" = (
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -11313,7 +11313,7 @@
 /obj/machinery/computer/message_monitor{
 	pixel_x = -6
 	},
-/obj/structure/window/reinforced/spawner/east{
+/obj/structure/window_new/reinforced/spawner/east{
 	resistance_flags = 115
 	},
 /turf/open/floor/plasteel/sepia{
@@ -11529,7 +11529,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/department_main/control)
 "ND" = (
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -11813,7 +11813,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/facility_hallway/control)
 "Od" = (
-/obj/structure/window/reinforced/fulltile{
+/obj/structure/window_new/reinforced/fulltile{
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70);
 	max_integrity = 500;
 	opacity = 1
@@ -11933,7 +11933,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/facility_hallway/command)
 "OC" = (
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -12049,7 +12049,7 @@
 	},
 /area/facility_hallway/training)
 "OX" = (
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -12074,7 +12074,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/facility_hallway/control)
 "Pe" = (
-/obj/structure/window/reinforced/fulltile{
+/obj/structure/window_new/reinforced/fulltile{
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70);
 	max_integrity = 500;
 	opacity = 1
@@ -12302,7 +12302,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/department_main/information)
 "Qj" = (
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -12492,7 +12492,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/facility_hallway/command)
 "QM" = (
-/obj/structure/window/reinforced/fulltile{
+/obj/structure/window_new/reinforced/fulltile{
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70);
 	max_integrity = 500;
 	opacity = 1
@@ -12788,7 +12788,7 @@
 /area/facility_hallway/safety)
 "RB" = (
 /obj/machinery/smartfridge/extraction_storage/ego_weapon,
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall";
 	opacity = 0
@@ -12811,7 +12811,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/facility_hallway/control)
 "RJ" = (
-/obj/structure/window/reinforced/spawner/north{
+/obj/structure/window_new/reinforced/spawner/north{
 	max_integrity = 25;
 	resistance_flags = 115
 	},
@@ -12877,7 +12877,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/department_main/records)
 "RW" = (
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -13296,7 +13296,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/facility_hallway/training)
 "Tz" = (
-/obj/structure/window/reinforced/spawner/east{
+/obj/structure/window_new/reinforced/spawner/east{
 	resistance_flags = 115
 	},
 /obj/machinery/computer/ego_purchase{
@@ -13501,7 +13501,7 @@
 /turf/open/floor/facility/halls,
 /area/facility_hallway/training)
 "Up" = (
-/obj/structure/window/reinforced/spawner/east{
+/obj/structure/window_new/reinforced/spawner/east{
 	density = 0;
 	pixel_y = 128;
 	resistance_flags = 115
@@ -13748,7 +13748,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/department_main/training)
 "UY" = (
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -13805,7 +13805,7 @@
 /obj/machinery/computer/crew{
 	resistance_flags = 115
 	},
-/obj/structure/window/reinforced/spawner/north{
+/obj/structure/window_new/reinforced/spawner/north{
 	max_integrity = 25;
 	resistance_flags = 115
 	},
@@ -14086,7 +14086,7 @@
 /area/facility_hallway/control)
 "Wq" = (
 /obj/structure/table/wood/fancy/purple,
-/obj/structure/window/reinforced/spawner{
+/obj/structure/window_new/reinforced/spawner{
 	resistance_flags = 115
 	},
 /obj/machinery/recharger{
@@ -14284,7 +14284,7 @@
 /turf/open/floor/plasteel/sepia,
 /area/facility_hallway/training)
 "WY" = (
-/obj/structure/window/reinforced/fulltile{
+/obj/structure/window_new/reinforced/fulltile{
 	armor = list("melee" = 30, "bullet" = 30, "laser" = 20, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 80, "acid" = 70);
 	max_integrity = 500
 	},
@@ -14294,7 +14294,7 @@
 /area/facility_hallway/control)
 "WZ" = (
 /obj/effect/spawner/abnormality_room,
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},
@@ -14388,7 +14388,7 @@
 /area/facility_hallway/information)
 "Xp" = (
 /obj/structure/table/wood/fancy/green,
-/obj/structure/window/reinforced/spawner/west{
+/obj/structure/window_new/reinforced/spawner/west{
 	max_integrity = 25;
 	resistance_flags = 115
 	},
@@ -14741,7 +14741,7 @@
 /obj/machinery/computer/abnormality_logs{
 	dir = 8
 	},
-/obj/structure/window/reinforced/spawner/east{
+/obj/structure/window_new/reinforced/spawner/east{
 	resistance_flags = 115
 	},
 /turf/open/floor/facility/dark{
@@ -14794,7 +14794,7 @@
 /area/department_main/safety)
 "YE" = (
 /obj/effect/spawner/abnormality_room,
-/turf/closed/indestructible/reinforced{
+/turf/closed/indestructible/reinforced/newer{
 	desc = "A huge chunk of wing-grade metal used in various L corporation facilities. Effectively impervious to conventional methods of destruction.";
 	name = "facility wall"
 	},

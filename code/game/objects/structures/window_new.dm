@@ -650,7 +650,7 @@
 /obj/structure/window_new/reinforced/fulltile
 	icon = 'icons/obj/smooth_structures/reinforced_window.dmi'
 	icon_state = "reinforced_window_new-0"
-	base_icon_state = "reinforced_window"
+	base_icon_state = "reinforced_window_new"
 	max_integrity = 150
 	fulltile = TRUE
 	flags_1 = PREVENT_CLICK_UNDER_1

@@ -15,7 +15,7 @@ GLOBAL_LIST_EMPTY(lcorp_upgrades)
 	minor_announce("Extraction has given you another choice of [GetFacilityUpgradeValue(UPGRADE_ABNO_QUEUE_COUNT)] abnormalities.", "Extraction Alert:", TRUE)
 	..()
 
-/datum/data/lc13research/redroll
+/*/datum/data/lc13research/redroll
 	research_name = "Enable Red Roll"
 	research_desc = "HQ Extraction trusts your judgement to let the manager press the big red button. <br>Everyone involved knows that this is a bad idea "
 	cost = LOW_RESEARCH_PRICE
@@ -24,7 +24,7 @@ GLOBAL_LIST_EMPTY(lcorp_upgrades)
 /datum/data/lc13research/redroll/ResearchEffect(obj/structure/representative_console/caller)
 	SSabnormality_queue.hardcore_roll_enabled = TRUE
 	minor_announce("Extraction has given you access to red rolls.", "Extraction Alert:", TRUE)
-	..()
+	..()*/
 
 //RAKS overcharge
 /datum/data/lc13research/regenerator_overcharge

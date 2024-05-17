@@ -385,4 +385,5 @@
 	playsound(get_turf(user), 'sound/items/toysqueak2.ogg', 10, 3, 3)
 	var/obj/machinery/computer/abnormality_queue/AC = new(get_turf(src))
 	AC.resistance_flags = 0
-	qdel(src)
+	QDEL_IN(AC, 10 SECONDS)
+	. = ..()

@@ -373,3 +373,16 @@
 	say("Restarting...")
 	SLEEP_CHECK_DEATH(10)
 	DeepsCheckStart()
+
+//Test dummy and spawner
+/obj/item/lc_debug/abnoselector
+	name = "abno selecter spawner"
+	desc = "Summons an abno selecter to your location."
+	icon = 'icons/obj/items_and_weapons.dmi'
+	icon_state = "skub"
+
+/obj/item/lc_debug/abnoselector/attack_self(mob/living/carbon/human/user)
+	playsound(get_turf(user), 'sound/items/toysqueak2.ogg', 10, 3, 3)
+	var/obj/machinery/computer/abnormality_queue/AC = new(get_turf(src))
+	AC.resistance_flags = 0
+	qdel(src)

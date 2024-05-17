@@ -580,12 +580,6 @@
 /obj/effect/turf_decal/caution/stand_clear,
 /turf/open/floor/facility/dark,
 /area/facility_hallway/manager)
-"iG" = (
-/obj/machinery/door/airlock/wood{
-	name = "Discipline Office"
-	},
-/turf/open/floor/plasteel/dark,
-/area/facility_hallway/manager)
 "iJ" = (
 /obj/structure/table/wood,
 /obj/item/storage/box/drinkingglasses{
@@ -1265,9 +1259,7 @@
 "sK" = (
 /obj/machinery/door/airlock/public/glass{
 	hackProof = 1;
-	max_integrity = 250000000;
 	name = "Representative Offices";
-	normal_integrity = 250000000;
 	req_access_txt = "69";
 	whitelist_door = 1
 	},
@@ -3116,9 +3108,7 @@
 "XR" = (
 /obj/machinery/door/airlock/public/glass{
 	hackProof = 1;
-	max_integrity = 250000000;
 	name = "Sefirot Offices";
-	normal_integrity = 250000000;
 	req_access_txt = "67";
 	whitelist_door = 1
 	},
@@ -6823,7 +6813,7 @@ Kl
 JY
 rO
 yO
-HZ
+YQ
 GA
 JT
 Vb
@@ -6925,7 +6915,7 @@ iU
 Rn
 rO
 rO
-HZ
+YQ
 Zi
 JT
 Vb
@@ -7027,7 +7017,7 @@ rO
 rO
 rO
 rO
-iG
+YQ
 Zi
 JT
 Vb

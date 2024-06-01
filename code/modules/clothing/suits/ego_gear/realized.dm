@@ -41,7 +41,7 @@ No Ability	260
 	name = "prophet"
 	desc = "And they have conquered him by the blood of the Lamb and by the word of their testimony, for they loved not their lives even unto death."
 	icon_state = "prophet"
-	armor = list(RED_DAMAGE = 40, WHITE_DAMAGE = 80, BLACK_DAMAGE = 80, PALE_DAMAGE = 60)	//Unused.
+	armor = list(RED_DAMAGE = 50, WHITE_DAMAGE = 80, BLACK_DAMAGE = 80, PALE_DAMAGE = 70)	//Unused.
 	flags_inv = HIDEJUMPSUIT|HIDEGLOVES|HIDESHOES
 	hat = /obj/item/clothing/head/ego_hat/prophet_hat
 

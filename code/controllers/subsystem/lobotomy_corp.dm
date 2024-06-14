@@ -96,7 +96,7 @@ SUBSYSTEM_DEF(lobotomy_corp)
 	var/lob_points = 2
 	/// Stats for Era/Do after an ordeal is done
 	var/ordeal_stats = 0
-
+	var/injector = FALSE
 	/// If TRUE - will not count deaths for auto restart
 	var/auto_restart_in_progress = FALSE
 

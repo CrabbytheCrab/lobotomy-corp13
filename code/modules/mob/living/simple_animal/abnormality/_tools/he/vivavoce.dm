@@ -24,7 +24,10 @@
 		if(prob(50))
 			playsound(user, 'sound/abnormalities/vivavoce/doorknock.ogg', 100, FALSE, -5)
 		return
-
+	user.physiology.instinct_success_mod += 0.5
+	user.physiology.insight_success_mod += 0.5
+	user.physiology.attachment_success_mod += 0.5
+	user.physiology.repression_success_mod += 0.5
 	user.physiology.black_mod *= 1.10
 	var/datum/status_effect/stacking/rolecall/R = user.has_status_effect(/datum/status_effect/stacking/rolecall)
 	R.add_stacks(1)

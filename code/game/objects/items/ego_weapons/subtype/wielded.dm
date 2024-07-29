@@ -42,6 +42,7 @@
 	if(!user)
 		return
 	current_holder = user
+	on_unwield(user)
 	RegisterSignal(current_holder, COMSIG_MOVABLE_MOVED, PROC_REF(UserMoved))
 
 //Destroy setup

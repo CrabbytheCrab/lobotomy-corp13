@@ -46,10 +46,11 @@
 
 //Destroy setup
 /obj/item/ego_weapon/wield/Destroy(mob/user)
+	if(!user)
+		return ..()
+	on_unwield(user)
 	UnregisterSignal(current_holder, COMSIG_MOVABLE_MOVED)
 	current_holder = null
-	current_slow_down = 0
-	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/wield, multiplicative_slowdown = 0)
 	return ..()
 
 //Dropped setup
@@ -57,11 +58,9 @@
 	. = ..()
 	if(!user)
 		return
-	current_holder = null
+	on_unwield(user)
 	UnregisterSignal(current_holder, COMSIG_MOVABLE_MOVED)
-	current_slow_down = 0
-	user.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/wield, multiplicative_slowdown = 0)
-	on_unwield(src,user)
+	current_holder = null
 
 /obj/item/ego_weapon/wield/attack_self(mob/user)
 	if (should_unwield_cooldown && unwield_cooldown > world.time)
@@ -102,6 +101,5 @@
 	current_slow_down = 0
 
 /datum/movespeed_modifier/wield
-
 	multiplicative_slowdown = 0
 	variable = TRUE

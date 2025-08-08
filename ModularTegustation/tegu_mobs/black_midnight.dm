@@ -2,16 +2,16 @@
 #define STATUS_EFFECT_HEAVY_GUILT /datum/status_effect/stacking/heavy_guilt
 #define STATUS_EFFECT_SCHISMATIC_BLACK /datum/status_effect/schismatic_black
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse
+/mob/living/simple_animal/hostile/megafauna/black_midnight
 	name = "Echoes of Flowering Nights"
 	desc = "A strange humanoid creature with roses for a head."
-	health = 7500
-	maxHealth = 7500
+	health = 5000
+	maxHealth = 5000
 	damage_coeff = list(RED_DAMAGE = 0.3, WHITE_DAMAGE = 0.3, BLACK_DAMAGE = 0.5, PALE_DAMAGE = 0)
 	attack_sound = "sound/abnormalities/goldenapple/Gold_Attack.ogg"
-	icon_state = "black_eclipse_rose"
-	icon_living = "black_eclipse_rose"
-	icon_dead = "black_eclipse_rose"
+	icon_state = "black_midnight_rose"
+	icon_living = "black_midnight_rose"
+	icon_dead = "black_midnight_rose"
 	icon = 'ModularTegustation/Teguicons/32x64.dmi'
 	faction = list("hostile")
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
@@ -44,7 +44,7 @@
 	//Var Lists
 	// 1=name 2=disc 3=melee damage type 4=lower damage 5= upper damage 6=icon 7=file location 8=x offset 9=y offset
 	var/list/phase_stats = list(
-		"rose" = list("Echoes of Flowering Night","A strange humanoid creature with roses for a head..",PALE_DAMAGE,5,10, "black_eclipse_rose", 'ModularTegustation/Teguicons/32x64.dmi',0,0,'sound/abnormalities/goldenapple/Gold_Attack.ogg'),
+		"rose" = list("Echoes of Flowering Night","A strange humanoid creature with roses for a head..",PALE_DAMAGE,5,10, "black_midnight_rose", 'ModularTegustation/Teguicons/32x64.dmi',0,0,'sound/abnormalities/goldenapple/Gold_Attack.ogg'),
 		"distort" = list("Echoes of Distortion", "An unstable looking humanoid that is constantly shifting between different weapons.",RED_DAMAGE,20,40,"John_Distortion", 'ModularTegustation/Teguicons/64x64.dmi',-16,-16,'sound/weapons/punch1.ogg'),
 		"oberon" = list("Echoes of Fairy King", "A being that sort of resembles Titania but also sort of resembles Nobody Is. Are those 2 connected in someway?", BLACK_DAMAGE,75,75, "fairy_king",'ModularTegustation/Teguicons/64x64.dmi',-16,0,'sound/weapons/slash.ogg'),
 		"twilight" = list("Echoes of Twilight", "A beast that seems to be hunting something...", RED_DAMAGE,150,180, "Twilight",'ModularTegustation/Teguicons/160x128.dmi',-64,-16, 'sound/abnormalities/nosferatu/attack.ogg'),
@@ -69,10 +69,10 @@
 	var/list/meltdowns = list()
 	//1 = damage type, 2 = lower damage, 3 = upper damage, 4 = rapid melee, 5 = icon, 6 = attack sound
 	var/list/weapon_stats = list(
-		"mimicry" = list(RED_DAMAGE,90,90,2, "distortion_mimicry", 'sound/abnormalities/nothingthere/attack.ogg'),//no I'm not going to give this life steal
-		"dacapo" = list(WHITE_DAMAGE,60,60,4, "distortion_dacapo",'sound/weapons/ego/da_capo1.ogg'), // look into stealing kiries dqcapo mirror guy code
-		"adoration" = list(BLACK_DAMAGE,100,100,1, "distortion_adoration",'sound/abnormalities/wrath_servant/big_smash1.ogg'), //has 60 black aoe so its more like 130-150 black
-		"distortion" = list(RED_DAMAGE,60,60,1, "distortion^2",'sound/weapons/ego/heavy_guard.ogg'), // does 45 red, white, black, and pale
+		"mimicry" = list(RED_DAMAGE,80,80,2, "distortion_mimicry", 'sound/abnormalities/nothingthere/attack.ogg'),//no I'm not going to give this life steal
+		"dacapo" = list(WHITE_DAMAGE,50,50,4, "distortion_dacapo",'sound/weapons/ego/da_capo1.ogg'), // look into stealing kiries dqcapo mirror guy code
+		"adoration" = list(BLACK_DAMAGE,80,80,1, "distortion_adoration",'sound/abnormalities/wrath_servant/big_smash1.ogg'), //has 60 black aoe so its more like 140 black
+		"distortion" = list(RED_DAMAGE,45,45,1, "distortion^2",'sound/weapons/ego/heavy_guard.ogg'), // does 45 red, white, black, and pale
 	)
 	var/current_weapon
 	var/list/weapon_type = list("mimicry","dacapo","adoration")
@@ -131,14 +131,14 @@
 	var/cross_ability_cooldown = 30 SECONDS
 	var/paradise_lifetime
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/Initialize()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/Initialize()
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NO_FLOATING_ANIM, ROUNDSTART_TRAIT) // Imagine floating.
 	rose_timer = world.time + 5 MINUTES
 	rose_timer_warning = world.time + 4 MINUTES
 
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/Life()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/Life()
 	. = ..()
 	if(!.) // Dead
 		return FALSE
@@ -191,7 +191,7 @@
 			if(paradise_lifetime < world.time)
 				FightEnding()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/death()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/death()
 	if(health > 0)
 		return
 	if(current_phase != "paradise")
@@ -213,13 +213,13 @@
 	QDEL_IN(src, 20)
 	return ..()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/Destroy()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/Destroy()
 	if(ordeal_reference)
 		ordeal_reference.OnMobDeath(src)
 		ordeal_reference = null
 	..()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/gib()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/gib()
 	if(current_phase != "paradise")
 		if(health < maxHealth * 0.2)
 			switch(current_phase)
@@ -235,7 +235,7 @@
 	return ..()
 
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/attackby(obj/item/W, mob/user, params)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/attackby(obj/item/W, mob/user, params)
 	. = ..()
 	if(isliving(user))
 		var/mob/living/L = user
@@ -247,7 +247,7 @@
 			if(prob(10 * HG.stacks))
 				Comeuppance(target)
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/bullet_act(obj/projectile/P)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/bullet_act(obj/projectile/P)
 	. = ..()
 	if(isliving(P.firer))
 		var/mob/living/L = P.firer
@@ -260,7 +260,7 @@
 				Comeuppance(target)
 
 // Modified patrolling
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/patrol_select()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/patrol_select()
 	if(current_phase == "twilight" || current_phase == "paradise")
 		var/list/target_turfs = list() // Stolen from Punishing Bird
 		for(var/mob/living/carbon/human/H in GLOB.human_list)
@@ -276,23 +276,23 @@
 			return
 	return ..()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/TransformSR()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/TransformSR()
 	Transform("rose")
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/TransformDF()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/TransformDF()
 	Transform("distort")
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/TransformNI()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/TransformNI()
 	Transform("oberon")
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/TransformAB()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/TransformAB()
 	Transform("twilight")
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/TransformWN()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/TransformWN()
 	Transform("paradise")
 
 //Transformations
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/Transform(form)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/Transform(form)
 	current_phase = form
 	can_move = FALSE
 	can_act = FALSE
@@ -383,17 +383,17 @@
 			sound_to_playing_players('sound/abnormalities/whitenight/apostle_bell.ogg', 75)
 			particles = new /particles/white_night()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/Move()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/Move()
 	if(!can_move)
 		return FALSE
 	return ..()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/Moved()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/Moved()
 	. = ..()
 	if(current_phase == "distort")
 		MoveVFX()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/OpenFire()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/OpenFire()
 	if(!can_act)
 		return FALSE
 	switch(current_phase)
@@ -429,7 +429,7 @@
 				if(get_dist(src, target) > 2)
 					GangsAllHere()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/AttackingTarget(atom/attacked_target)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/AttackingTarget(atom/attacked_target)
 	if(!can_act)
 		return FALSE
 	switch(current_phase)
@@ -523,12 +523,12 @@
 					GangsAllHere()
 	return ..()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/CanAttack(atom/the_target)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/CanAttack(atom/the_target)
 	if(!can_act)
 		return FALSE
 	return ..()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
 	switch(current_phase)
 		if("rose")
@@ -542,7 +542,7 @@
 			if(damage_taken >= 500)
 				distorted_meltdown_punish = distorted_meltdown_punish_cooldown + world.time
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/bullet_act(obj/projectile/P)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/bullet_act(obj/projectile/P)
 	switch(current_phase)
 		if("rose")
 			visible_message(span_userdanger("[src] is unfazed by \the [P]!"))
@@ -553,16 +553,16 @@
 
 
 //rose procs
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/Rose_Warn()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/Rose_Warn()
 	sound_to_playing_players('sound/abnormalities/rose/meltdown.ogg')	//Church bells ringing, whether it happens or not.
-	icon_state = "black_eclipse_rose_red"
+	icon_state = "black_midnight_rose_red"
 	update_icon()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/Rose_Bloom()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/Rose_Bloom()
 	src.adjustBruteLoss(5000)
 	SSweather.run_weather(/datum/weather/petals/short)
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/Petal_Attack_Red()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/Petal_Attack_Red()
 	rose_attack_timer = world.time + rose_attack_cooldown
 	var/turf/area_of_effect = list()
 	for(var/turf/L in view(10, src))
@@ -584,7 +584,7 @@
 	playsound(get_turf(src), 'sound/weapons/fixer/generic/sword3.ogg', 50, 0, 5)
 	visible_message(span_danger("[src] realeases red petals everywhere!"))
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/Petal_Attack_White()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/Petal_Attack_White()
 	rose_attack_timer = world.time + rose_attack_cooldown
 	var/turf/area_of_effect = list()
 	for(var/turf/L in view(10, src))
@@ -605,7 +605,7 @@
 	playsound(get_turf(src), 'sound/weapons/fixer/generic/sword3.ogg', 50, 0, 5)
 	visible_message(span_danger("[src] realeases white petals everywhere!"))
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/Petal_Attack_Pale()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/Petal_Attack_Pale()
 	var/turf/target_c = get_turf(src)
 	var/list/turf_list = list()
 	var/list/been_hit = list()
@@ -670,7 +670,7 @@
 	status_holder.physiology.pale_mod *= 0.8
 
 //distortion related stuff
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/DFApplyFilters()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/DFApplyFilters()
 //Filter stuff - Generates a randomized displacement of the icon's sprites
 	var/icon/filter_icon = new(icon, icon_state)
 	var/newcolor = pick(COLOR_RED, COLOR_BLUE, COLOR_YELLOW, COLOR_GREEN, COLOR_PURPLE, COLOR_ORANGE)
@@ -693,7 +693,7 @@
 	animate(size = size_end, time=10)
 	update_icon()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/MoveVFX()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/MoveVFX()
 	set waitfor = FALSE
 	var/obj/viscon_filtereffect/distortedform_trail/trail = new(src.loc,themob = src, waittime = 5)
 	trail.vis_contents += src
@@ -702,7 +702,7 @@
 	animate(trail, alpha=120)
 	animate(alpha = 0, time = 10)
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/CauseMelts(datum/source, datum/abnormality/abno_datum, worked)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/CauseMelts(datum/source, datum/abnormality/abno_datum, worked)
 	var/meltdown_text = "Horrible screeches have caused a disturbance in the containment zones of the following abnormalities:"
 	var/meltdown_sound = pick(
 		"sound/abnormalities/distortedform/screech3.ogg",
@@ -717,7 +717,7 @@
 	for(var/obj/machinery/computer/abnormality/A in meltdowns) // TODO: Figure out a way to exclude it entirely from melts so it doesn't breach itself.
 		RegisterSignal(A, COMSIG_MELTDOWN_FINISHED, PROC_REF(SpecialMeltFinish))
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/SpecialMeltFinish(datum/source, datum/abnormality/abno_datum, worked)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/SpecialMeltFinish(datum/source, datum/abnormality/abno_datum, worked)
 	SIGNAL_HANDLER
 	if(!LAZYLEN(meltdowns))
 		return
@@ -730,7 +730,7 @@
 				A.datum_reference.qliphoth_change(-200)
 				return
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/Weapon_Swap()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/Weapon_Swap()
 	if(!can_act || distort_weapon_swap > world.time || distort_second_phase)
 		return
 	current_weapon = pick(weapon_type)
@@ -760,7 +760,7 @@
 		move_to_delay = 3
 		UpdateSpeed()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/Weapon_DF()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/Weapon_DF()
 	if(!can_act || distort_second_phase)
 		return
 	distorted_meltdown_punish = distorted_meltdown_punish_cooldown + world.time
@@ -785,7 +785,7 @@
 	move_to_delay = 4.5
 	UpdateSpeed()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/Goodbye()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/Goodbye()
 	if(distort_weapon_special > world.time)
 		return
 	distort_weapon_special = world.time + distort_weapon_special_cooldown
@@ -813,7 +813,7 @@
 	can_act = TRUE
 	can_move = TRUE
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/dacapo_slash(atom/target)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/dacapo_slash(atom/target)
 	if(!istype(target) || QDELETED(target))
 		return
 	if(distort_weapon_special > world.time)
@@ -855,7 +855,7 @@
 	can_act = TRUE
 	can_move = TRUE
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/DoLineAttack(list/line)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/DoLineAttack(list/line)
 	for(var/turf/T in line)
 		if(locate(/obj/effect/temp_visual/small_smoke/second) in T)
 			continue
@@ -870,7 +870,7 @@
 				continue
 			L.apply_damage(distorted_slash, WHITE_DAMAGE, null, L.run_armor_check(null, WHITE_DAMAGE))
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/SlimeConvert(mob/living/carbon/human/H)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/SlimeConvert(mob/living/carbon/human/H)
 	if(!istype(H))
 		return FALSE
 	visible_message(span_danger("[H] gets melted by the slime as a slime pawn appears!"))
@@ -878,7 +878,7 @@
 	H.gib()
 	return TRUE
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/adoration_slam()//To Do: Make it say "SHE DOES NOT LOVE YOU" when you have melting loves gift.
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/adoration_slam()//To Do: Make it say "SHE DOES NOT LOVE YOU" when you have melting loves gift.
 	if(!istype(target) || QDELETED(target))
 		return
 	if(distort_weapon_special > world.time)
@@ -912,7 +912,7 @@
 	can_act = TRUE
 	can_move = TRUE
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/slime_aoe(size, sound)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/slime_aoe(size, sound)
 	if(current_phase != "distort")
 		return
 	playsound(src, sound, 100, 1)
@@ -929,7 +929,7 @@
 			if(H.health <= 0)
 				SlimeConvert(H)
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/DistortedDash()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/DistortedDash()
 	if(!istype(target) || QDELETED(target))
 		return
 	if(distort_weapon_special > world.time)
@@ -947,7 +947,7 @@
 		return
 	SwiftDash(target, 25, 20,0)
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/SwiftDash(mob/living/target, distance, wait_time,dash_amount)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/SwiftDash(mob/living/target, distance, wait_time,dash_amount)
 	been_hit = list()
 	var/turf/end_turf = get_ranged_target_turf_direct(src, target, distance, 0)
 	var/list/turf_list = getline(src, end_turf)
@@ -998,7 +998,7 @@
 	can_act = TRUE
 	can_move = TRUE
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/MegaDashAoe()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/MegaDashAoe()
 	for(var/turf/T in view(3,src))
 		new /obj/effect/temp_visual/small_smoke(T)
 		for(var/mob/living/carbon/L in HurtInTurf(T, list(), distorted_shield_dash, RED_DAMAGE, check_faction = TRUE, hurt_mechs = TRUE))
@@ -1008,7 +1008,7 @@
 				for(var/damage_type in list(WHITE_DAMAGE, BLACK_DAMAGE, PALE_DAMAGE))
 					L.apply_damage(distorted_shield_dash, damage_type, null, L.run_armor_check(null, damage_type))
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/DfGrab(mob/living/carbon/human/target,dash_amount)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/DfGrab(mob/living/carbon/human/target,dash_amount)
 	face_atom(get_step(src,SOUTH))
 	playsound(target, 'sound/abnormalities/fairy_longlegs/attack.ogg', 50, FALSE)
 	target.Immobilize(15)
@@ -1126,7 +1126,7 @@
 
 //fairy king stuff
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/FairySpawn()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/FairySpawn()
 	//Blurb about how many we have spawned
 	listclearnulls(oberon_spawned_fairies)
 	for(var/mob/living/L in oberon_spawned_fairies)
@@ -1141,7 +1141,7 @@
 		V.faction = faction
 		oberon_spawned_fairies+=V
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/FlowerSpawn()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/FlowerSpawn()
 	//Blurb about how many we have spawned
 	listclearnulls(oberon_spawned_flowers)
 	for(var/mob/living/L in oberon_spawned_flowers)
@@ -1161,17 +1161,17 @@
 	F.Boost()
 	oberon_spawned_flowers+=F
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/FlowerPowerCalc()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/FlowerPowerCalc()
 	if(current_phase == "oberon")
 		melee_damage_lower = 75 + oberon_flower_power
 		melee_damage_upper = 75 + oberon_flower_power
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/FlowerSpeedCalc()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/FlowerSpeedCalc()
 	if(current_phase == "oberon")
 		move_to_delay = 2.5 - oberon_flower_speed
 		UpdateSpeed()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/FlowerDefenseCalc()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/FlowerDefenseCalc()
 	if(current_phase == "oberon")
 		ChangeResistances(list(RED_DAMAGE = 0.5 - oberon_flower_defense, WHITE_DAMAGE = 0.3 - oberon_flower_defense, BLACK_DAMAGE = 0 - oberon_flower_defense, PALE_DAMAGE = 0.3 - oberon_flower_defense))
 
@@ -1180,8 +1180,8 @@
 	name = "fairy"
 	desc = "A tiny, extremely hungry fairy."
 	icon = 'ModularTegustation/Teguicons/tegumobs.dmi'
-	icon_state = "fairyswarm_black_eclipse"
-	icon_living = "fairyswarm_black_eclipse"
+	icon_state = "fairyswarm_black_midnight"
+	icon_living = "fairyswarm_black_midnight"
 	pass_flags = PASSTABLE | PASSMOB
 	is_flying_animal = TRUE
 	density = FALSE
@@ -1216,7 +1216,7 @@
 		L.apply_damage(melee_damage_lower, BLACK_DAMAGE, null, L.run_armor_check(null, BLACK_DAMAGE), spread_damage = TRUE)
 	return ..()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/ChokeHold()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/ChokeHold()
 	if(oberon_chokehold > world.time)
 		return
 	oberon_chokehold = world.time + oberon_chokehold_cooldown
@@ -1261,7 +1261,7 @@
 	health = 800
 	damage_coeff = list(RED_DAMAGE = 1.2, WHITE_DAMAGE = 0.6, BLACK_DAMAGE = 0.2, PALE_DAMAGE = 0.8)
 	del_on_death = TRUE
-	var/mob/living/simple_animal/hostile/megafauna/black_eclipse/master
+	var/mob/living/simple_animal/hostile/megafauna/black_midnight/master
 	var/fpower = 0
 	var/fspeed = 0
 	var/fdefense = 0
@@ -1376,7 +1376,7 @@
 
 //twilight stuff
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/SoulJudgement()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/SoulJudgement()
 	if(twilight_ranged > world.time || !can_act)
 		return
 	can_act = FALSE
@@ -1426,7 +1426,7 @@
 	can_act = TRUE
 	can_move = TRUE
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/BrilliantEyes()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/BrilliantEyes()
 	if(twilight_ranged > world.time || !can_act)
 		return
 	can_act = FALSE
@@ -1487,7 +1487,7 @@
 	can_act = TRUE
 	can_move = TRUE
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/EndEnchant(mob/living/carbon/human/victim)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/EndEnchant(mob/living/carbon/human/victim)
 	if(victim in twilight_enchanted_list)
 		twilight_enchanted_list.Remove(victim)
 		victim.cut_overlay(mutable_appearance('ModularTegustation/Teguicons/tegu_effects.dmi', "enchanted", -HALO_LAYER))
@@ -1495,7 +1495,7 @@
 			to_chat(victim, "<span class='boldwarning'>You snap out of your trance!")
 			qdel(victim.ai_controller)
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/Comeuppance(mob/living/target)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/Comeuppance(mob/living/target)
 	if(!istype(target) || QDELETED(target))
 		return
 	if(twilight_melee > world.time)
@@ -1533,7 +1533,7 @@
 	can_act = TRUE
 	can_move = TRUE
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/BeakAttack()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/BeakAttack()
 	playsound(src, 'sound/abnormalities/apocalypse/beak.ogg', 100, FALSE, 12)
 	for(var/turf/T in view(3,src))
 		new /obj/effect/temp_visual/beakbite(T)
@@ -1542,7 +1542,7 @@
 			if(L.health < 0)
 				L.gib()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/TwilightSlam()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/TwilightSlam()
 	can_act = FALSE
 	can_move = FALSE
 	playsound(src, 'sound/abnormalities/apocalypse/pre_attack.ogg', 125, FALSE, 4)
@@ -1624,8 +1624,8 @@
 	if(blackboard[BB_INSANE_CURRENT_ATTACK_TARGET] != null)
 		return
 
-	var/mob/living/simple_animal/hostile/megafauna/black_eclipse/bird
-	for(var/mob/living/simple_animal/hostile/megafauna/black_eclipse/M in GLOB.mob_living_list)
+	var/mob/living/simple_animal/hostile/megafauna/black_midnight/bird
+	for(var/mob/living/simple_animal/hostile/megafauna/black_midnight/M in GLOB.mob_living_list)
 		if(!istype(M))
 			continue
 		bird = M
@@ -1651,7 +1651,7 @@
 	if(IS_DEAD_OR_INCAP(living_pawn))
 		return
 
-	var/mob/living/simple_animal/hostile/megafauna/black_eclipse/target = controller.blackboard[BB_INSANE_CURRENT_ATTACK_TARGET]
+	var/mob/living/simple_animal/hostile/megafauna/black_midnight/target = controller.blackboard[BB_INSANE_CURRENT_ATTACK_TARGET]
 	if(!istype(target))
 		finish_action(controller, FALSE)
 		return
@@ -1699,7 +1699,7 @@
 /datum/ai_behavior/enchanted_move_black/finish_action(datum/ai_controller/insane/enchanted_black/controller, succeeded)
 	. = ..()
 	var/mob/living/carbon/human/living_pawn = controller.pawn
-	var/mob/living/simple_animal/hostile/megafauna/black_eclipse/target = controller.blackboard[BB_INSANE_CURRENT_ATTACK_TARGET]
+	var/mob/living/simple_animal/hostile/megafauna/black_midnight/target = controller.blackboard[BB_INSANE_CURRENT_ATTACK_TARGET]
 	controller.pathing_attempts = 0
 	controller.current_path = list()
 	if(succeeded)
@@ -1730,7 +1730,7 @@
 		M.adjust_blindness(4)
 
 //wn procs
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/ApostleSpawn()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/ApostleSpawn()
 	for(var/i = 1 to 11)
 		var/apostle_type = /mob/living/simple_animal/hostile/apostle/scythe
 		if(i in list(1,11))
@@ -1749,7 +1749,7 @@
 			if(length(possible_locs) > 1)
 				possible_locs -= T
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/revive_humans(range_override = null, faction_check = "apostle")
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/revive_humans(range_override = null, faction_check = "apostle")
 	if(paradise_aura > world.time)
 		return
 	if(!can_act)
@@ -1798,7 +1798,7 @@
 				addtimer(CALLBACK(src, PROC_REF(revive_target), L, i, faction_check))
 		SLEEP_CHECK_DEATH(1.5)
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/revive_target(mob/living/L, attack_range = 1, faction_check = "apostle")
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/revive_target(mob/living/L, attack_range = 1, faction_check = "apostle")
 	if(L in been_hit)
 		return
 	been_hit += L
@@ -1824,7 +1824,7 @@
 			L.regenerate_organs()
 			to_chat(L, span_notice("The holy light heals you!"))
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/GangsAllHere()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/GangsAllHere()
 	if(paradise_ability > world.time)
 		return
 	if(!can_act)
@@ -1840,7 +1840,7 @@
 			G.grab_ghost(force = TRUE)
 			to_chat(G, span_notice("The holy light compels you to live!"))
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/CrossSpawn()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/CrossSpawn()
 	if(cross_ability > world.time)
 		return
 	if(!can_act)
@@ -1863,7 +1863,7 @@
 				new /obj/effect/crossspawner(get_turf(L2), faction)
 				targets -= L2
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/FightEnding()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/FightEnding()
 	var/list/people_alive = list()
 	// Looks at every human.
 	for(var/mob/living/carbon/human/people in GLOB.player_list)
@@ -1875,7 +1875,7 @@
 	else
 		OneSinSweep()
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/GameOver()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/GameOver()
 	SSticker.force_ending = 1
 	sound_to_playing_players('sound/abnormalities/whitenight/apostle_bell.ogg')
 	for(var/mob/M in GLOB.player_list)
@@ -1887,7 +1887,7 @@
 			H.gib()
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(sound_to_playing_players), 'sound/abnormalities/whitenight/rapture2.ogg', 50), 10 SECONDS)
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/OneSinSweep()
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/OneSinSweep()
 	for(var/mob/living/simple_animal/hostile/apostle/A in apostles)
 		A.death()
 		QDEL_IN(A, 1.5 SECONDS)
@@ -1905,7 +1905,7 @@
 	sleep(1 SECONDS)
 	SinKill(SIN)
 
-/mob/living/simple_animal/hostile/megafauna/black_eclipse/proc/SinKill(mob/living/simple_animal/hostile/skullbro/SIN)
+/mob/living/simple_animal/hostile/megafauna/black_midnight/proc/SinKill(mob/living/simple_animal/hostile/skullbro/SIN)
 	var/curr_health = health
 	for(var/i = 1 to 12)
 		sleep(1.5 SECONDS)
@@ -1976,12 +1976,12 @@
 	scythe_damage = 150 // It's a big AoE unlike base game where it's smaller and as it is you straight up die unless you have 7+ Pale resist. You also have TWO of these AND WN hitting you for ~80 Pale at this range.
 
 /mob/living/simple_animal/hostile/apostle/scythe/guardian_black/CanStartPatrol()
-	if(locate(/mob/living/simple_animal/hostile/megafauna/black_eclipse) in view(9, src))
+	if(locate(/mob/living/simple_animal/hostile/megafauna/black_midnight) in view(9, src))
 		return FALSE
 	return ..()
 
 /mob/living/simple_animal/hostile/apostle/scythe/guardian_black/patrol_select()
-	var/mob/living/simple_animal/hostile/megafauna/black_eclipse/PL = locate() in GLOB.mob_list
+	var/mob/living/simple_animal/hostile/megafauna/black_midnight/PL = locate() in GLOB.mob_list
 	if(!istype(PL))
 		return
 	var/turf/target_turf = pick(RANGE_TURFS(2, PL))

@@ -253,7 +253,7 @@
 /datum/suppression/combination/keter_day50
 	name = DAY50_CORE_SUPPRESSION
 	desc = "The facility will experience unusual effects on it, with unknown subset of ordeals present.<br>\
-			To complete the challenge - you must defeat the Eclipse of White or the Eclipse of Black ."
+			To complete the challenge - you must defeat the ?????????????."
 	run_text = "The final day on your job has come."
 	required_cores = list(
 		CONTROL_CORE_SUPPRESSION,

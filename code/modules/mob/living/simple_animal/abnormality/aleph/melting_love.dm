@@ -448,7 +448,7 @@
 		/mob/living/simple_animal/hostile/abnormality/melting_love,
 		/mob/living/simple_animal/hostile/slime/big,
 		/mob/living/simple_animal/hostile/slime,
-		/mob/living/simple_animal/hostile/megafauna/black_eclipse
+		/mob/living/simple_animal/hostile/megafauna/black_midnight
 	)
 
 /obj/effect/decal/cleanable/melty_slime/Initialize(mapload, list/datum/disease/diseases)

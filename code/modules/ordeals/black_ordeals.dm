@@ -4,10 +4,10 @@
 	announce_text = "To reach the peak to only fall back into the pits of hell once more..."
 	end_announce_text = "Oh how utter fools we were as we start again anew."
 	can_run = TRUE
-	level = 13
+	level = 9
 	reward_percent = 0.25
 	color = "#444444"
-	var/bosstype = /mob/living/simple_animal/hostile/megafauna/black_eclipse
+	var/bosstype = /mob/living/simple_animal/hostile/megafauna/black_midnight
 	var/bossspawnloc = /area/department_main/command
 
 /datum/ordeal/black_eclipse/Run()

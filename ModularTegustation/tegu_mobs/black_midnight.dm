@@ -195,6 +195,7 @@
 	if(health > 0)
 		return
 	if(current_phase != "paradise")
+		health = maxHealth
 		switch(current_phase)
 			if("rose")
 				Transform("distort")
@@ -220,17 +221,19 @@
 	..()
 
 /mob/living/simple_animal/hostile/megafauna/black_midnight/gib()
+	if(health > 0)
+		return
 	if(current_phase != "paradise")
-		if(health < maxHealth * 0.2)
-			switch(current_phase)
-				if("rose")
-					return Transform("distort")
-				if("distort")
-					return Transform("oberon")
-				if("oberon")
-					return Transform("twilight")
-				if("twilight")
-					return Transform("paradise")
+		health = maxHealth
+		switch(current_phase)
+			if("rose")
+				return Transform("distort")
+			if("distort")
+				return Transform("oberon")
+			if("oberon")
+				return Transform("twilight")
+			if("twilight")
+				return Transform("paradise")
 		return
 	return ..()
 
@@ -296,7 +299,7 @@
 	current_phase = form
 	can_move = FALSE
 	can_act = FALSE
-	maxHealth = 7500
+	maxHealth = 5000
 	health = maxHealth
 	alpha = 0
 	rapid_melee = 2
@@ -452,8 +455,8 @@
 						distorted_combo = 0
 
 					//Reset these to normal
-					melee_damage_lower = 60
-					melee_damage_upper = 60
+					melee_damage_lower = 55
+					melee_damage_upper = 55
 
 					distorted_combo+=1
 					switch(distorted_combo)

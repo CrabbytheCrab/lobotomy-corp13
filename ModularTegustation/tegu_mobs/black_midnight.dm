@@ -41,6 +41,7 @@
 	var/damage_taken = 0
 	var/list/been_hit = list()
 	var/datum/ordeal/ordeal_reference
+	var/phase_transition = FALSE
 	//Var Lists
 	// 1=name 2=disc 3=melee damage type 4=lower damage 5= upper damage 6=icon 7=file location 8=x offset 9=y offset
 	var/list/phase_stats = list(
@@ -192,10 +193,11 @@
 				FightEnding()
 
 /mob/living/simple_animal/hostile/megafauna/black_midnight/death()
-	if(health > 0)
+	if(health > 0 || phase_transition)
 		return
 	if(current_phase != "paradise")
 		health = maxHealth
+		phase_transition = TRUE
 		switch(current_phase)
 			if("rose")
 				Transform("distort")
@@ -221,7 +223,7 @@
 	..()
 
 /mob/living/simple_animal/hostile/megafauna/black_midnight/gib()
-	if(health > 0)
+	if(health > 0 || phase_transition)
 		return
 	if(current_phase != "paradise")
 		health = maxHealth
@@ -329,6 +331,7 @@
 	update_light()
 	sleep(3)
 	playsound(src, 'sound/weapons/black_silence/snap.ogg', 50)
+	phase_transition = FALSE
 	alpha = 255
 	can_move = TRUE
 	can_act = TRUE

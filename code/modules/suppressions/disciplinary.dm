@@ -28,8 +28,8 @@
 /mob/living/simple_animal/hostile/megafauna/red_mist
 	name = "The Red Mist"
 	desc = "A powerful color fixer; Despite being a mere imitation, it is nonetheless an intimidating foe."
-	health = 7500
-	maxHealth = 7500
+	health = 3000
+	maxHealth = 3000
 	damage_coeff = list(RED_DAMAGE = 0.7, WHITE_DAMAGE = 0.7, BLACK_DAMAGE = 0.7, PALE_DAMAGE = 0.7)
 	icon_state = "red_mist_phase_1"
 	icon_living = "red_mist_phase_1"
@@ -50,8 +50,8 @@
 	footstep_type = FOOTSTEP_MOB_HEAVY
 	can_patrol = TRUE
 	melee_damage_type = WHITE_DAMAGE
-	melee_damage_lower = 60
-	melee_damage_upper = 70
+	melee_damage_lower = 25
+	melee_damage_upper = 30
 	attack_verb_continuous = "beats"
 	attack_verb_simple = "beat"
 	rapid_melee = 2
@@ -80,22 +80,22 @@
 	//used for phases 2, 3, and 4
 	var/attack_mode = 0
 	//phase 2 melee damage
-	var/mimicry_damage = 240
-	var/da_capo_damage = 90
-	var/da_capo_max_damage = 180
+	var/mimicry_damage = 90
+	var/da_capo_damage = 40
+	var/da_capo_max_damage = 80
 	//uses for the attack when she loses 33% hp
 	var/mimicry_rush = FALSE
 	var/turf/turf_target = null
-	var/mimicry_rush_damage = 200
+	var/mimicry_rush_damage = 100
 	var/mimicry_rush_damage_full = 500
 	var/obj/effect/da_capo/scythe
 	//for smile
 	var/smile_rapid_damage = 10
 	var/smile_rapid_range = 8
-	var/smile_damage = 250
+	var/smile_damage = 110
 	//for justitia
 	var/justitia_range = 25
-	var/justitia_aoe_damage = 120
+	var/justitia_aoe_damage = 70
 	var/justitia_aoe_range = 6
 	//used for phase 4
 	var/twilight_damage = 100
@@ -230,21 +230,21 @@
 		if(1)
 			//Reset these to normal
 			melee_damage_type = WHITE_DAMAGE
-			melee_damage_lower = 60
-			melee_damage_upper = 70
+			melee_damage_lower = 25
+			melee_damage_upper = 30
 			rapid_melee = 2
 			combo+=1
 			attack_sound = 'sound/weapons/fixer/generic/gen1.ogg'
 			switch(combo)
 				if(1)
 					say("Penitence")
-					melee_damage_lower = 60
-					melee_damage_upper = 70
+					melee_damage_lower = 25
+					melee_damage_upper = 30
 					melee_damage_type = WHITE_DAMAGE
 				if(2)
 					say("Red Eyes")
-					melee_damage_lower = 60
-					melee_damage_upper = 70
+					melee_damage_lower = 25
+					melee_damage_upper = 30
 					melee_damage_type = RED_DAMAGE
 				if(3)
 					say("Get blown to pieces")
@@ -608,8 +608,8 @@
 				continue
 			if(faction_check_mob(L))
 				continue
-			L.apply_damage(120, RED_DAMAGE, null, L.run_armor_check(null, RED_DAMAGE))
-			L.apply_damage(120, WHITE_DAMAGE, null, L.run_armor_check(null, WHITE_DAMAGE))
+			L.apply_damage(60, RED_DAMAGE, null, L.run_armor_check(null, RED_DAMAGE))
+			L.apply_damage(60, WHITE_DAMAGE, null, L.run_armor_check(null, WHITE_DAMAGE))
 			if(L.health <= 0)
 				L.gib()
 			if(ishuman(L))

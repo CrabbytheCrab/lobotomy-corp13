@@ -703,7 +703,7 @@
 	name = "heaven"
 	icon = 'ModularTegustation/Teguicons/32x48.dmi'
 	icon_state = "heaven_projectile"
-	damage = 200
+	damage = 100
 	speed = 0.3
 	damage_type = BLACK_DAMAGE
 	projectile_piercing = PASSMOB
@@ -787,7 +787,7 @@
 	var/list/faction = list("red mist")
 	layer = POINT_LAYER	//We want this HIGH. SUPER HIGH. We want it so that you can absolutely, guaranteed, see exactly what is about to hit you.
 	var/list/turf_list = list()
-	var/slash_damage = 300
+	var/slash_damage = 150
 	var/list/been_hit = list()
 
 /obj/effect/da_capo/New(loc, ...)
@@ -897,7 +897,7 @@
 	var/list/faction = list("red mist")
 	layer = POINT_LAYER	//We want this HIGH. SUPER HIGH. We want it so that you can absolutely, guaranteed, see exactly what is about to hit you.
 	var/list/turf_list = list()
-	var/slash_damage = 80
+	var/slash_damage = 70
 	var/list/been_hit = list()
 
 /obj/effect/justitia_slash/New(loc, ...)
@@ -980,7 +980,7 @@
 	var/list/faction = list("red mist")
 	layer = POINT_LAYER	//We want this HIGH. SUPER HIGH. We want it so that you can absolutely, guaranteed, see exactly what is about to hit you.
 	var/list/turf_list = list()
-	var/bash_damage = 200
+	var/bash_damage = 100
 	var/list/been_hit = list()
 
 /obj/effect/goldrush_fist/New(loc, ...)

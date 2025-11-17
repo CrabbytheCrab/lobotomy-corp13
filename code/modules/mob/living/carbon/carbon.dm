@@ -775,21 +775,23 @@
 		clear_fullscreen("oxy")
 
 	//Fire and Brute damage overlay (BSSR)
-	var/hurtdamage = getBruteLoss() + getFireLoss() + damageoverlaytemp
-	if(hurtdamage)
+	var/healthpercent = (health/maxHealth) * 100
+	if(healthpercent)
 		var/severity = 0
-		switch(hurtdamage)
-			if(5 to 15)
+		switch(healthpercent)
+			if(100 to INFINITY)
+				severity = 0
+			if(80 to 100)
 				severity = 1
-			if(15 to 30)
+			if(60 to 80)
 				severity = 2
-			if(30 to 45)
+			if(40 to 60)
 				severity = 3
-			if(45 to 70)
+			if(20 to 40)
 				severity = 4
-			if(70 to 85)
+			if(1 to 20)
 				severity = 5
-			if(85 to INFINITY)
+			else
 				severity = 6
 		overlay_fullscreen("brute", /atom/movable/screen/fullscreen/brute, severity)
 	else

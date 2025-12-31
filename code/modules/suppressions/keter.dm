@@ -5,6 +5,7 @@
 			After clearing Dawn, Noon and Dusk the agents will have to face off against The Claw."
 	goal_text = "Defeat the Midnight of White - The Claw."
 	run_text = "The Ordeals of White have been introduced into the facility's subroutines. There will be one meltdown in-between each ordeal."
+	reward_text = "We will get one step closer to our goal..."
 	annonce_sound = 'sound/effects/combat_suppression_start.ogg'
 	end_sound = 'sound/effects/combat_suppression_end.ogg'
 	after_midnight = TRUE
@@ -96,8 +97,8 @@
 	running_cores += new /datum/suppression/safety
 	// More stat reductions at the start, but gets reverted over time
 	var/datum/suppression/training/T = new
-	T.attribute_debuff_count_starting = -30
-	T.attribute_debuff_count = 5
+	T.attribute_debuff_count_starting = -5
+	T.attribute_debuff_count = -5
 	running_cores += T
 	// And then start them all
 	for(var/datum/suppression/S in running_cores)
@@ -116,9 +117,9 @@
 	name = DAY48_CORE_SUPPRESSION
 	desc = "Effects of core suppressions of Central Command and Welfare departments \
 			will activate for the duration of this test. <br>\
-			The Red Mist will make her appearence after completing the Noon of White.<br>\
+			The Red Mist will make her appearence on the meltdown after the Noon of White.<br>\
 			To complete the challenge - you must defeat the Midnight of White - The Claw."
-	run_text = "Effects of Center Commandand and Welfare core suppressions are now in effect. The Red Mist will return after completing the Noon of White. Ordeals of White have been introduced in the subroutines.."
+	run_text = "Effects of Center Commandand and Welfare core suppressions are now in effect. The Red Mist will return the meltdown after the Noon of White. Ordeals of White have been introduced in the subroutines.."
 	required_cores = list(
 		CONTROL_CORE_SUPPRESSION,
 		INFORMATION_CORE_SUPPRESSION,
@@ -130,6 +131,7 @@
 		DAY46_CORE_SUPPRESSION,
 		DAY47_CORE_SUPPRESSION,
 		)
+	var/red_mist_melt = FALSE
 
 /datum/suppression/combination/keter_day48/Run(run_white = TRUE, silent = FALSE)
 	. = ..()
@@ -145,14 +147,16 @@
 		var/blurb_text = blurb_list[i]
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(show_global_blurb), 10 SECONDS, blurb_text, 1 SECONDS, "white", "black", "center", "CENTER-6,BOTTOM+2"), i * 11 SECONDS)
 	// Create our cores
-	// Does this actually do anything? Like sure siren exists but Keter cores don't have meltdowns outside of Siren and the rare working Distorted Form with justice 4.
 	var/datum/suppression/command/C = new
-	C.meltdown_count_increase = 4
-	C.meltdown_time_multiplier = 0.5
+	C.meltdown_count_increase = 2
+	C.meltdown_time_multiplier = 0.8
 	C.meltdown_time_reduction = 0.1
 	running_cores += C
 	// Some damage types hurt more
 	var/datum/suppression/welfare/W = new
+	//Scales much less or else it and Central combined would be unbeatable after dusk
+	W.damage_mod = 1.75
+	W.mod_increase = 0.25
 	running_cores += W
 	for(var/datum/suppression/S in running_cores)
 		S.Run(FALSE, TRUE)
@@ -164,13 +168,16 @@
 	SIGNAL_HANDLER
 	if(!istype(O, /datum/ordeal/fixers/white_noon))
 		return
-	// Spawn the red mist
-	addtimer(CALLBACK(src, PROC_REF(SpawnRedMist)), 10 SECONDS)
+	// Spawn the red mist next meltdown
+	red_mist_melt = TRUE
 
 /datum/suppression/combination/keter_day48/proc/SpawnRedMist()
-	// Make welfare less AIDS
+	//Disables Chesed just like in LC.
 	var/datum/suppression/welfare/W = GetCoreSuppression(/datum/suppression/welfare)
-	W.mod_count = 2
+	W.mod_count = 0
+	W.selection_limit = 4//You can't pray for it not hitting red for claw!
+	W.selection_increase = 2//Needed to bounce back the scaling after setting it to 0
+	W.OnMeltdown()
 	var/turf/T = pick(GLOB.department_centers)
 	var/mob/living/simple_animal/hostile/megafauna/red_mist/RM = new(T)
 	// A bit nerfed, so you don't get mopped after white noon taking up bullets, okay?
@@ -186,9 +193,9 @@
 /datum/suppression/combination/keter_day49
 	name = DAY49_CORE_SUPPRESSION
 	desc = "Effects of Records core suppression will be present throughout the entire challenge. <br>\
-			The Arbiter will make their appearence after completing the Noon of White.<br>\
+			The Arbiter will make their appearence on the meltdown after the Noon Noon of White.<br>\
 			To complete the challenge - you must defeat the Midnight of White - The Claw."
-	run_text = "The effects of Records core suppression are now in effect. The Arbiter will return after completing the Noon of White. Ordeals of White have been introduced in the subroutines."
+	run_text = "The effects of Records core suppression are now in effect. The Arbiter will return the meltdown after the Noon of White. Ordeals of White have been introduced in the subroutines."
 	required_cores = list(
 		CONTROL_CORE_SUPPRESSION,
 		INFORMATION_CORE_SUPPRESSION,
@@ -203,6 +210,7 @@
 		DAY47_CORE_SUPPRESSION,
 		DAY48_CORE_SUPPRESSION,
 		)
+	var/arbiter_melt = FALSE
 
 /datum/suppression/combination/keter_day49/Run(run_white = TRUE, silent = FALSE)
 	. = ..()
@@ -241,8 +249,8 @@
 	SIGNAL_HANDLER
 	if(!istype(O, /datum/ordeal/fixers/white_noon))
 		return
-	// Spawn the arbiter
-	addtimer(CALLBACK(src, PROC_REF(SpawnArbiter)), 10 SECONDS)
+	// Spawn the arbiter next melt
+	arbiter_melt = TRUE
 
 /datum/suppression/combination/keter_day49/proc/SpawnArbiter()
 	// Make records less AIDS

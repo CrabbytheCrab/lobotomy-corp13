@@ -13,6 +13,12 @@
 	var/damage_mod = 2
 	/// How many damage types will be changed
 	var/mod_count = 1
+	/// How much does the damage multiplier gets increased by after an ordeal
+	var/mod_increase = 0.5
+	///By how much does the selection count increases per meltdown
+	var/selection_increase = 1
+	//the selection count for damage types to multiply
+	var/selection_limit = 3
 	var/list/affected_statuses = list()
 	// Multipliers
 	var/list/current_resist = list(
@@ -60,8 +66,8 @@
 	var/current_damage_mod = damage_mod
 	if(ordeal)
 		current_damage_mod = 1.5 // Don't kill everyone too hard during ordeals(Pale Fixer with x3 damage be like...)
-		damage_mod = min(4, damage_mod + 0.5) // With each ordeal passing, normal meltdowns will be more difficult
-		mod_count = min(3, mod_count + 1) // More damage types get rolled
+		damage_mod = min(4, damage_mod + mod_increase) // With each ordeal passing, normal meltdowns will be more difficult
+		mod_count = min(selection_limit, mod_count + selection_increase) // More damage types get rolled
 	var/list/temp_list = current_resist.Copy()
 	for(var/R in current_resist) // Reset values
 		current_resist[R] = 1

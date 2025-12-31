@@ -281,6 +281,23 @@ SUBSYSTEM_DEF(lobotomy_corp)
 	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_MELTDOWN_START, ran_ordeal)
 	if(ran_ordeal)
 		return
+	var/datum/suppression/combination/keter_day48/R&A = GetCoreSuppression(/datum/suppression/combination/keter_day48)
+	var/datum/suppression/combination/keter_day49/F&A = GetCoreSuppression(/datum/suppression/combination/keter_day49)
+	if(istype(R&A))
+		if(R&A.red_mist_melt)
+			R&A.red_mist_melt = FALSE
+			R&A.SpawnRedMist()
+			if(next_ordeal && (qliphoth_state + 1 >= next_ordeal_time))
+				priority_announce("[alert_text] [next_ordeal.name] will trigger on the next meltdown.", "Qliphoth Meltdown", sound=alert_sound)
+			return
+
+	if(istype(F&A))
+		if(F&A.arbiter_melt)
+			F&A.arbiter_melt = FALSE
+			F&A.SpawnArbiter()
+			if(next_ordeal && (qliphoth_state + 1 >= next_ordeal_time))
+				priority_announce("[alert_text] [next_ordeal.name] will trigger on the next meltdown.", "Qliphoth Meltdown", sound=alert_sound)
+			return
 	InitiateMeltdown(qliphoth_meltdown_amount, FALSE)
 	// Less agents will decrease meltdown count, but more - increase it
 	var/agent_mod = 0.4 + (player_count * 0.1)

@@ -24,7 +24,12 @@
 	var/selected_category
 	var/screen = 1
 	var/list/categories = list(
-							"human"
+							"human",
+							"lizard",
+							"moth",
+							"plasmaman",
+							"ethereal",
+							"other"
 							)
 
 /obj/machinery/limbgrower/Initialize()

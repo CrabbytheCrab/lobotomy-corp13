@@ -15,8 +15,7 @@
 		ABNORMALITY_WORK_ATTACHMENT = 40,
 		ABNORMALITY_WORK_REPRESSION = 30,
 	)
-	work_damage_upper = 4
-	work_damage_lower = 2
+	work_damage_amount = 3
 	work_damage_type = BLACK_DAMAGE
 	chem_type = /datum/reagent/abnormality/sin/pride
 
@@ -69,7 +68,7 @@
 				icon_state = "book_[wordcount]"
 
 /mob/living/simple_animal/hostile/abnormality/book/AttemptWork(mob/living/carbon/human/user, work_type)
-	work_damage_upper = 4 + wordcount
+	work_damage_amount = 3 + wordcount
 	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/book/WorkChance(mob/living/carbon/human/user, chance, work_type)

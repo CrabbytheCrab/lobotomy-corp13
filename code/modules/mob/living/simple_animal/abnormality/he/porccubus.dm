@@ -24,9 +24,7 @@
 	melee_damage_upper = 4
 	rapid_melee = 3 //you can withdraw out of its range very easily so it needs to be a little harder to melee it
 	melee_reach = 2
-	work_damage_upper = 5
-	work_damage_lower = 1
-	max_boxes = 18
+	work_damage_amount = 5
 	can_patrol = FALSE //it can't move anyway but why not
 	stat_attack = HARD_CRIT
 	work_damage_type = BLACK_DAMAGE

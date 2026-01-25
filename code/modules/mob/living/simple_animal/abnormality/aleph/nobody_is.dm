@@ -29,8 +29,7 @@
 		ABNORMALITY_WORK_ATTACHMENT = 50,
 		ABNORMALITY_WORK_REPRESSION = 0,
 	)
-	work_damage_upper = 9
-	work_damage_lower = 6
+	work_damage_amount = 9
 	work_damage_type = BLACK_DAMAGE
 	chem_type = /datum/reagent/abnormality/sin/gloom
 
@@ -213,9 +212,9 @@
 
 /mob/living/simple_animal/hostile/abnormality/nobody_is/AttemptWork(mob/living/carbon/human/user, work_type)
 	if(solo_punish)
-		work_damage_upper = 15
+		work_damage_amount = 15
 		return ..()
-	work_damage_upper = initial(work_damage_upper)
+	work_damage_amount = initial(work_damage_amount)
 	return ..()
 
 /mob/living/simple_animal/hostile/abnormality/nobody_is/PostWorkEffect(mob/living/carbon/human/user, work_type, pe, work_time)

@@ -17,6 +17,16 @@
 		if(isturf(D))
 			var/turf/T = D
 			T.ScrapeAway()
+		else if(istype(D,/mob/living/carbon/human))
+			var/mob/M=D
+				//if(M.ckey != usr.ckey)
+			playsound(M, 'sound/effects/deletescream.ogg', 75, 1)
+			animate(M, alpha = 0, time = 20)
+			sleep(19)
+			vv_update_display(D, "deleted", VV_MSG_DELETED)
+			qdel(M)
+			if(!QDELETED(M))
+				vv_update_display(M, "deleted", "")
 		else
 			vv_update_display(D, "deleted", VV_MSG_DELETED)
 			qdel(D)

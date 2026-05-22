@@ -100,15 +100,6 @@
 			for(var/obj/machinery/door/D in T.contents)
 				if(D.density)
 					return
-			if(ishuman(attacked_target) && can_infect)
-				var/mob/living/carbon/human/H = attacked_target
-				var/parasite_slot = H.getorganslot(ORGAN_SLOT_PARASITE_EGG)
-				if(H.stat != CONSCIOUS && !parasite_slot) //Only infect people in crit/dead and that don't have a parasite of some kind already.
-					var/obj/item/organ/amber_bug/amber_parasite = new(H)
-					amber_parasite.ordeal_reference = ordeal_reference
-					playsound(get_turf(src), 'sound/effects/ordeals/amber/dawn_dig_in.ogg', 25, 1)
-					to_chat(H, span_danger("The bug is eating its way inside your chest!"))
-					qdel(src)
 			forceMove(T)
 			SLEEP_CHECK_DEATH(2)
 

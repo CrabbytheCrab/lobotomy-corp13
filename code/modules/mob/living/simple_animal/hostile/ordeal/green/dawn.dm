@@ -9,12 +9,12 @@
 	faction = list("green_ordeal")
 	gender = NEUTER
 	mob_biotypes = MOB_ROBOTIC
-	maxHealth = 120
-	health = 120
+	maxHealth = 150
+	health = 150
 	speed = 2
 	move_to_delay = 3.5
-	melee_damage_lower = 6
-	melee_damage_upper = 8
+	melee_damage_lower = 3
+	melee_damage_upper = 5
 	attack_verb_continuous = "stabs"
 	attack_verb_simple = "stab"
 	attack_sound = 'sound/effects/ordeals/green/stab.ogg'
@@ -23,7 +23,7 @@
 	butcher_results = list(/obj/item/food/meat/slab/robot = 1)
 	guaranteed_butcher_results = list(/obj/item/food/meat/slab/robot = 1)
 	silk_results = list(/obj/item/stack/sheet/silk/green_simple = 1)
-
+	can_patrol = TRUE
 	/// Can't move/attack when it's TRUE
 	var/finishing = FALSE
 
@@ -103,8 +103,8 @@
 	icon_state = "green_bot_b"
 	icon_living = "green_bot_b"
 	move_to_delay = 3
-	melee_damage_lower = 3
-	melee_damage_upper = 4
+	melee_damage_lower = 2
+	melee_damage_upper = 3
 
 /mob/living/simple_animal/hostile/ordeal/green_bot/syringe/AttackingTarget(atom/attacked_target)
 	if(finishing)
@@ -130,7 +130,7 @@
 	icon_living = "green_bot_c"
 	rapid_melee = 3
 	move_to_delay = 4
-	melee_damage_lower = 2
+	melee_damage_lower = 1
 	melee_damage_upper = 3
 
 /mob/living/simple_animal/hostile/ordeal/green_bot/fast/factory/death(gibbed)

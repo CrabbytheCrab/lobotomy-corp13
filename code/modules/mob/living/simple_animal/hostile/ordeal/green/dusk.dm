@@ -54,10 +54,10 @@
 	if(producing)
 		return
 	update_icon()
-	if(length(spawned_mobs) >= 9)
-		return
 	if(spawn_progress < 15)
 		spawn_progress += 1
+		return
+	if(length(spawned_mobs) >= 6)
 		return
 	Produce()
 
@@ -82,6 +82,8 @@
 
 		var/mob/living/simple_animal/hostile/ordeal/nb = new picked_mob(T)
 		spawned_mobs += nb
+		if(prob(20))//Well we need someone defending it
+			nb.can_patrol = FALSE
 		if(ordeal_reference)
 			nb.ordeal_reference = ordeal_reference
 			ordeal_reference.ordeal_mobs += nb
@@ -89,7 +91,7 @@
 	SLEEP_CHECK_DEATH(2)
 	icon = initial(icon)
 	producing = FALSE
-	spawn_progress = -5 // Basically, puts us on a tiny cooldown
+	spawn_progress = rand(5, 10) * -1 // Basically, puts us on a tiny cooldown
 	update_icon()
 
 /mob/living/simple_animal/hostile/ordeal/green_dusk/update_icon_state()

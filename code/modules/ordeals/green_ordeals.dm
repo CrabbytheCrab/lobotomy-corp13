@@ -48,7 +48,7 @@
 	announce_sound = 'sound/effects/ordeals/green_start.ogg'
 	end_sound = 'sound/effects/ordeals/green_end.ogg'
 	color = COLOR_DARK_LIME
-	spawn_places = 3
+	spawn_places = 4
 	spawn_amount = 1
 	spawn_type = /mob/living/simple_animal/hostile/ordeal/green_dusk
 	place_player_multiplicator = 0

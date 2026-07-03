@@ -16,8 +16,8 @@
 	health = 300
 	speed = 3
 	move_to_delay = 6
-	melee_damage_lower = 8 // Full damage is done on the entire turf of target
-	melee_damage_upper = 10
+	melee_damage_lower = 1 // Full damage is done on the entire turf of target
+	melee_damage_upper = 2
 	attack_verb_continuous = "saws"
 	attack_verb_simple = "saw"
 	attack_sound = 'sound/effects/ordeals/green/saw.ogg'
@@ -35,6 +35,7 @@
 	guaranteed_butcher_results = list(/obj/item/food/meat/slab/robot = 1)
 	silk_results = list(/obj/item/stack/sheet/silk/green_advanced = 1,
 						/obj/item/stack/sheet/silk/green_simple = 2)
+	can_patrol = TRUE
 
 	/// Can't move/attack when it's TRUE
 	var/reloading = FALSE
@@ -85,11 +86,14 @@
 		var/turf/T = get_turf(attacked_target)
 		if(!T)
 			return
-		for(var/i = 1 to 4)
+		new /obj/effect/temp_visual/saw_effect(T)
+		HurtInTurf(T, list(attacked_target), rand(melee_damage_lower,melee_damage_upper), RED_DAMAGE, check_faction = TRUE, hurt_mechs = TRUE)
+		SLEEP_CHECK_DEATH(1)
+		for(var/i = 1 to 8)
 			if(!T)
 				return
 			new /obj/effect/temp_visual/saw_effect(T)
-			HurtInTurf(T, list(), 4, RED_DAMAGE, check_faction = TRUE, hurt_mechs = TRUE)
+			HurtInTurf(T, list(), rand(melee_damage_lower,melee_damage_upper), RED_DAMAGE, check_faction = TRUE, hurt_mechs = TRUE)
 			SLEEP_CHECK_DEATH(1)
 
 /mob/living/simple_animal/hostile/ordeal/green_bot_big/spawn_gibs()

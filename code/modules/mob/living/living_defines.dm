@@ -186,3 +186,10 @@
 
 	/// Index used to interact with the moblist of the area they are currently in.
 	var/area_index = MOB_LIVING_INDEX
+
+	/// A multiplier for all damage the mob deals or for red/white/black/pale
+	var/damage_mult = 1
+	var/red_damage_mult = 1
+	var/white_damage_mult = 1
+	var/black_damage_mult = 1
+	var/pale_damage_mult = 1

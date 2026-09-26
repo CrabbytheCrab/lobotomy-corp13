@@ -1612,7 +1612,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		var/mob/living/L = source
 		damage_amount *= L.damage_mult
 		switch(damage_type)
-			if(RED_DAMAGE)
+			if(RED_DAMAGE, FIRE)
 				damage_amount *= L.red_damage_mult
 			if(WHITE_DAMAGE)
 				damage_amount *= L.white_damage_mult

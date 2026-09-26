@@ -187,8 +187,9 @@
 	/// Index used to interact with the moblist of the area they are currently in.
 	var/area_index = MOB_LIVING_INDEX
 
-	/// A multiplier for all damage the mob deals or for red/white/black/pale
+	/// A multiplier for all damage the mob does to something
 	var/damage_mult = 1
+	/// These only effect one of the 4 LC damage types (or fire damage for red as well)
 	var/red_damage_mult = 1
 	var/white_damage_mult = 1
 	var/black_damage_mult = 1

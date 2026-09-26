@@ -36,7 +36,7 @@ sharpness - Irrelevant in most cases.
 		if(signal_return & COMPONENT_MOB_DENY_DAMAGE)
 			return FALSE
 
-		if(source && isliving(source))
+		if(source && isliving(source) && !(attack_type & (ATTACK_TYPE_ENVIRONMENT))
 			var/mob/living/L = source
 			damage_amount *= L.damage_mult
 			switch(damage_type)

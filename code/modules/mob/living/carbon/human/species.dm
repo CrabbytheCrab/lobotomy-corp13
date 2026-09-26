@@ -1608,7 +1608,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	if(signal_return & COMPONENT_MOB_DENY_DAMAGE)
 		return FALSE
 
-	if(source && isliving(source) && !(attack_type & (ATTACK_TYPE_ENVIRONMENT))
+	if(source && isliving(source) && !(attack_type & (ATTACK_TYPE_ENVIRONMENT)))
 		var/mob/living/L = source
 		damage_amount *= L.damage_mult
 		switch(damage_type)
